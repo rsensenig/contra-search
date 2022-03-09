@@ -31,10 +31,16 @@ nav {
 }
 
 nav h1 {
+    color: var(--purple);
     margin-bottom: 0;
     display: flex;
     justify-content: center;
     font-size: 1.75rem;
+    text-decoration: none;
+}
+
+nav a {
+    text-decoration: none;
 }
 
 nav img {
@@ -53,10 +59,23 @@ nav ul {
 
 nav li a {
     display: block;
-    color: var(--purple);
+    color: var(--gray);
     font-family: 'Cabin', sans-serif;
     padding: 8px 16px;
-    text-decoration: none;
+}
+
+ul:hover > li {
+    opacity: 0.5;
+}
+
+ul:hover > li:hover {
+    opacity: 1.0;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--aqua);
+    text-decoration-thickness: 0.2em;
 }
 
 /* Main body styling */

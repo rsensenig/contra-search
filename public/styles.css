@@ -5,6 +5,7 @@
     --purple: #614051;
     --white: #FFFFF0;
     --gray: #594A4B;
+    font-size: 1.4rem;
 }
 
 * {
@@ -23,7 +24,7 @@ body {
 /* Navbar styling */
 
 nav {
-    width: 25%;
+    width: 20%;
     background-color: var(--yellow);
     position: fixed;
     height: 100%;
@@ -48,7 +49,7 @@ nav img {
     width: 175px;
     height: auto;
     padding: 10px;
-    margin: auto;
+    margin: 20px auto;
 }
 
 nav ul {

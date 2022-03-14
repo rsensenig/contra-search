@@ -5,49 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
+    <link rel="stylesheet" href="public/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Inknut+Antiqua:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/67db90f657.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
-        <img href="#">
-        <a href="home.html">Home</a>
-        <a href="about-contra.html">What is Contra?</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-   <main>
-       <section>
-           <input type="text" placeholder="Enter Zipcode" name="search">
-           <button type="submit"><i class="fas fa-search"></i></button>
-       </section>
-       <section>
-           <div class="result"><p>[Name of Event]</p>
-               <p>[Name of Organization]</p>
-               <p>[Where]</p>
-               <p>[Date]</p>
-               <p>[Time]</p>
-               <p>[Description]</p>
-               <p>[Website Link]</p></div>
-           <div class="result"><p>Snow Day: A Flurry Festival Fundraising Concert</p>
-               <p>Dance Flurry Organization</p>
-               <p>Online</p>
-               <p>Friday, February 18, 2022</p>
-               <p>7:00 pm - 11:00 pm</p>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, saepe culpa harum repudiandae inventore, dolorem ipsam vitae cum, ipsum non eum quae deserunt mollitia voluptates sunt quaerat aliquid voluptatum asperiores?</p>
-               <p>https://www.flurryfestival.org/</p></div>
-           <div class="result"><p>The Flurry Festival</p>
-               <p>Dance Flurry Organization</p>
-               <p>Saratoga Springs City Center / Hilton Hotel, 522 Broadway, Saratoga Springs, NY 12866</p>
-               <p>February 17-19, 2023</p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolorum sequi facere esse molestias voluptatibus enim unde magni libero ipsam. Ex tempore sint corrupti? Exercitationem, repellat. Aperiam saepe excepturi quam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio recusandae eum, molestiae saepe expedita voluptates minima, quia quis dolor impedit sunt totam repellendus sit voluptatem, pariatur aliquam a reiciendis repellat.</p>
-               <p>https://www.flurryfestival.org/</p></div>
-           <div class="result"><p>BIDA Sunday Night Contra Dance</p>
-               <p>Boston Intergenerational Dance Advocates (BIDA)</p>
-               <p>1950 Massachusetts Ave, Cambridge, MA 02140</p>
-               <p>Sunday, March 6, 2022</p>
-               <p>7:00 pm - 10:30 pm</p>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere adipisci corporis aliquam ipsam repellendus explicabo nulla ducimus provident, deserunt delectus cum, animi voluptates! Saepe, eum sed! Alias, ea vitae?</p>
-               <p>https://www.bidadance.org/</p></div>
-       </section>
-   </main>
+    <div class="wrapper">
+        <nav>
+            <a href="home.html">
+                <h1>Contra Search</h1>
+            </a>
+            <a href="home.html">
+                <img src="public/images/contrastar.svg" alt="Vector drawing of four brightly colored people turning in a star formation with their hand on the wrist of the person in front of them.">
+            </a>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about-contra.html">What is Contra?</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="javascript:void(0);" class="menu-icon">
+                <i class="fas fa-bars fa-lg"></i>
+            </a>
+          </nav>
+           <main>
+                <div class="wrapper-inner">
+                    <section>
+                        <input type="text" placeholder="Enter Zipcode" name="search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </section>
+                    <section>
+                        <div class="result"><p>[Name of Event]</p>
+                            <p>[Name of Organization]</p>
+                            <p>[Where]</p>
+                            <p>[Date]</p>
+                            <p>[Time]</p>
+                            <p>[Description]</p>
+                            <p>[Website Link]</p></div>
+                        <div class="result"><p>Snow Day: A Flurry Festival Fundraising Concert</p>
+                            <p>Dance Flurry Organization</p>
+                            <p>Online</p>
+                            <p>Friday, February 18, 2022</p>
+                            <p>7:00 pm - 11:00 pm</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, saepe culpa harum repudiandae inventore, dolorem ipsam vitae cum, ipsum non eum quae deserunt mollitia voluptates sunt quaerat aliquid voluptatum asperiores?</p>
+                            <p>https://www.flurryfestival.org/</p></div>
+                        <div class="result"><p>The Flurry Festival</p>
+                            <p>Dance Flurry Organization</p>
+                            <p>Saratoga Springs City Center / Hilton Hotel, 522 Broadway, Saratoga Springs, NY 12866</p>
+                            <p>February 17-19, 2023</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolorum sequi facere esse molestias voluptatibus enim unde magni libero ipsam. Ex tempore sint corrupti? Exercitationem, repellat. Aperiam saepe excepturi quam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio recusandae eum, molestiae saepe expedita voluptates minima, quia quis dolor impedit sunt totam repellendus sit voluptatem, pariatur aliquam a reiciendis repellat.</p>
+                            <p>https://www.flurryfestival.org/</p></div>
+                    
+                        <div class="result"><p>BIDA Sunday Night Contra Dance</p>
+                            <p>Boston Intergenerational Dance Advocates (BIDA)</p>
+                            <p>1950 Massachusetts Ave, Cambridge, MA 02140</p>
+                            <p>Sunday, March 6, 2022</p>
+                            <p>7:00 pm - 10:30 pm</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere adipisci corporis aliquam ipsam repellendus explicabo nulla ducimus provident, deserunt delectus cum, animi voluptates! Saepe, eum sed! Alias, ea vitae?</p>
+                            <p>https://www.bidadance.org/</p></div>
+                    </section>
+                </div>
+           </main>
+    </div>
 </body>
 </html>

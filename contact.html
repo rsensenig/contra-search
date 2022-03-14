@@ -5,34 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
+    <link rel="stylesheet" href="public/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Inknut+Antiqua:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/67db90f657.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
-        <img href="#">
-        <a href="home.html">Home</a>
-        <a href="about-contra.html">What is Contra?</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <main>
-        <section>
-            <h1>Contact Me</h1>
-            <form action="#">
-                <div><label for="name">Name:</label>
-                <input type="text" name="name" id="name" placeholder="Full Name"></div>
-                <div><label for="message">Message:</label>
-                <textarea name="message" id="message" placeholder="Message here"></textarea></div>
-                <input type="submit" value="Submit">
-            </form>
-        </section>
-        <section>
-            <h1>About Me</h1>
-            <img href="#">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error illo ut officia aut quia repellendus enim tenetur, maxime omnis voluptas sunt, minus eaque, voluptatibus alias sapiente. Iusto inventore cumque iste?</p>
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-github"></i>
-        </section>
-    </main>
+    <div class="wrapper">
+        <nav>
+            <a href="home.html">
+                <h1>Contra Search</h1>
+            </a>
+            <a href="home.html">
+                <img src="public/images/contrastar.svg" alt="Vector drawing of four brightly colored people turning in a star formation with their hand on the wrist of the person in front of them.">
+            </a>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about-contra.html">What is Contra?</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="javascript:void(0);" class="menu-icon">
+                <i class="fas fa-bars fa-lg"></i>
+            </a>
+          </nav>
+        <main>
+            <div class="wrapper-inner">
+                <section>
+                    <h1>Contact Me</h1>
+                    <form action="#">
+                        <div><label for="name">Name:</label>
+                        <input type="text" name="name" id="name" placeholder="Full Name"></div>
+                        <div><label for="message">Message:</label>
+                        <textarea name="message" id="message" placeholder="Message here"></textarea></div>
+                        <input type="submit" value="Submit">
+                    </form>
+                </section>
+                <section>
+                    <h1>About Me</h1>
+                    <img href="#">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error illo ut officia aut quia repellendus enim tenetur, maxime omnis voluptas sunt, minus eaque, voluptatibus alias sapiente. Iusto inventore cumque iste?</p>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-github"></i>
+                </section>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

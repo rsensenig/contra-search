@@ -101,7 +101,9 @@ main div div {
     padding: 1px 16px;
 }
 
-/* Large screen styling */
+/* Media Queries */
+
+/* Desktop Size */
 
 @media (min-width: 768px) {
     .wrapper {
@@ -128,6 +130,44 @@ main div div {
         padding: 0;
         display: block;
     }
+
+    .menu-icon {
+        display: none;
+    }
+}
+
+/* Large Desktop Size */
+
+@media screen and (min-width: 1024px) {
+    .wrapper {
+        flex-direction: row;
+    }
+    nav {
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    nav h1 {
+        font-size: 1.7rem;
+        margin-top: 1em;
+    }
+
+    nav img {
+        width: 185px;
+        margin: 0px auto 30px;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+
+    nav li a {
+        font-size: 1.2rem;
+    }
+
     .menu-icon {
         display: none;
     }

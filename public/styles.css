@@ -1,3 +1,5 @@
+/* Define the colors */
+/* Set the defaults */
 :root {
     --orange: #EC5800;
     --yellow: #FFCC33;
@@ -5,6 +7,12 @@
     --purple: #614051;
     --white: #FFFFF0;
     --gray: #594A4B;
+
+    --navbar-bg: var(--yellow);
+    --main-bg: var(--white);
+    --heading: var(--purple);
+    --body: var(--gray);
+    --menu: var(--gray);
 }
 
 * {
@@ -26,7 +34,7 @@ body {
 /* Navbar styling */
 
 nav {
-    background-color: var(--yellow);
+    background-color: var(--navbar-bg);
     padding: 0.5rem;
     display: flex;
     flex-direction: row;
@@ -34,7 +42,7 @@ nav {
 }
 
 nav h1 {
-    color: var(--purple);
+    color: var(--heading);
     font-size: 1rem;
     margin: 0 5px;
     text-decoration: none;
@@ -58,7 +66,7 @@ nav ul {
 
 nav li a {
     display: block;
-    color: var(--gray);
+    color: var(--menu);
     font-family: 'Cabin', sans-serif;
     padding: 8px 16px;
 }
@@ -78,7 +86,7 @@ nav li a:hover {
 }
 
 .menu-icon {
-    color: var(--grey);
+    color: var(--gray);
     flex-grow: 1;
     text-align: right;
     padding-right: 1em;
@@ -88,12 +96,25 @@ nav li a:hover {
 
 main {
     overflow-y: auto;
+    background-color: var(--white);
 }
 
 .wrapper-inner {
-    width: 90%;
+    width: 85%;
     margin: 0px auto;
 }
+
+h1 {
+    font-family: 'Inknut Antiqua', serif;
+    color: var(--heading);
+}
+
+p {
+    font-family: 'Cabin', sans-serif;
+    color: var(--body);
+}
+
+/* Home page body styling */
 
 main div div {
     font-family: 'Cabin', sans-serif;
@@ -109,6 +130,7 @@ main div div {
     .wrapper {
         flex-direction: row;
     }
+
     nav {
         flex-direction: column;
         justify-content: start;

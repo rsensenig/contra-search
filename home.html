@@ -13,7 +13,7 @@
     <div class="wrapper">
       <nav>
         <a href="home.html">
-            <h1>Contra Search</h1>
+            <h1>Contra&nbsp;Search</h1>
         </a>
         <a href="home.html">
             <img src="public/images/contrastar.svg" alt="Vector drawing of four brightly colored people turning in a star formation with their hand on the wrist of the person in front of them.">
@@ -29,10 +29,17 @@
       </nav>
       <main>
         <div class="wrapper-inner">
-            <div>
-                <input type="text" placeholder="Enter Zipcode" name="search">
-                <button type="submit"><i class="fas fa-search"></i></button>
-                <a href="post-event.html">Post an event <i class="fas fa-arrow-right"></i></a>
+            <div class="card-container">
+                <div class="card">
+                    <p>Find a dance near you!</p>
+                     <div class="search">
+                        <input type="text" class="search-term" placeholder="Enter Zipcode">
+                        <button type="submit" class="search-button"><i class="fas fa-search fa-lg"></i></button>
+                    </div>
+                </div>
+                <div class="post-event">
+                    <a href="post-event.html">Post an event <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
       </main>

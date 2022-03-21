@@ -23,14 +23,17 @@ body {
     overflow: hidden;
     height: 100vh;
     margin: 0;
+    background-color: var(--white);
     font-family: 'Cabin', sans-serif;
     font-family: 'Inknut Antiqua', serif;
 }
+
 .wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
+
 /* Navbar styling */
 
 nav {
@@ -68,7 +71,7 @@ nav li a {
     display: block;
     color: var(--menu);
     font-family: 'Cabin', sans-serif;
-    padding: 8px 16px;
+    padding: 12px 20px;
 }
 
 ul:hover > li {
@@ -96,11 +99,12 @@ nav li a:hover {
 
 main {
     overflow-y: auto;
-    background-color: var(--white);
+    width: 100%;
 }
 
 .wrapper-inner {
     width: 85%;
+    height: 100vh;
     margin: 0px auto;
 }
 
@@ -116,9 +120,59 @@ p {
 
 /* Home page body styling */
 
-main div div {
+.card-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 300px;
+    padding: 2px 1px 4px 1px;
+    border-radius: 5px;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.card p {
+    font-size: 1.2rem;
+}
+
+.search {
+    width: 100%;
+    display: flex;
+  }
+  
+.search-term {
+    width: 100%;
+    border: 3px solid var(--orange);
+    border-right: none;
+    padding: 5px;
+    height: 46px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+.search-button {
+    width: 70px;
+    height: 46px;
+    border: 1px solid var(--orange);
+    background: var(--orange);
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    /* cursor: pointer;
+    font-size: 20px; */
+  }
+
+.post-event {
+    width: 300px;
     font-family: 'Cabin', sans-serif;
-    font-size: 0.75rem;
+    font-size: 1rem;
     padding: 1px 16px;
 }
 
@@ -137,7 +191,7 @@ main div div {
     }
 
     nav h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-top: 1em;
     }
 
@@ -153,8 +207,38 @@ main div div {
         display: block;
     }
 
+    nav li a {
+        font-size: 1.4rem;
+    }
+
     .menu-icon {
         display: none;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .card {
+        width: 500px;
+    }
+
+    .card p {
+        font-size: 1.6rem;
+    }    
+
+    .search-term {
+        padding: 5px;
+        height: 56px;
+        font-size: 1.4rem;
+      }
+
+    .search-button {
+        height: 56px;
+    }
+
+    .post-event {
+        width: 500px;
     }
 }
 
@@ -170,7 +254,7 @@ main div div {
     }
 
     nav h1 {
-        font-size: 1.7rem;
+        font-size: 2rem;
         margin-top: 1em;
     }
 
@@ -187,10 +271,36 @@ main div div {
     }
 
     nav li a {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
     .menu-icon {
         display: none;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    .card {
+        width: 700px;
+    }
+
+    .card p {
+        font-size: 1.6rem;
+    }
+
+    .search-term {
+        padding: 5px;
+        height: 56px;
+        font-size: 1.4rem;
+      }
+
+    .search-button {
+        height: 56px;
+    }
+
+    .post-event {
+        width: 700px;
     }
 }

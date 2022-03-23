@@ -176,6 +176,26 @@ p {
     padding: 1px 16px;
 }
 
+/* Contact page styling */
+
+.about-me {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.rachel-dancing {
+    width: 250px;
+    height: auto;
+}
+
+.social-media-icons {
+    width: 125px;
+    color: var(--purple);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Media Queries */
 
 /* Desktop Size */
@@ -240,6 +260,15 @@ p {
     .post-event {
         width: 500px;
     }
+
+    .about-me {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .rachel-dancing {
+        margin-right: 20px;
+    }
 }
 
 /* Large Desktop Size */
@@ -302,5 +331,14 @@ p {
 
     .post-event {
         width: 700px;
+    }
+
+    .about-me {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .rachel-dancing {
+        margin-right: 20px;
     }
 }

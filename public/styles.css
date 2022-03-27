@@ -13,6 +13,9 @@
     --heading: var(--purple);
     --body: var(--gray);
     --menu: var(--gray);
+
+    --sans-serif-font: 'Cabin', sans-serif;
+    --serif-font: 'Inknut Antiqua', serif;
 }
 
 * {
@@ -24,8 +27,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: var(--white);
-    font-family: 'Cabin', sans-serif;
-    font-family: 'Inknut Antiqua', serif;
+    font-family: var(--sans-serif-font);
 }
 
 .wrapper {
@@ -34,7 +36,7 @@ body {
     height: 100%;
 }
 
-/* Navbar styling */
+/* Navbar Styling */
 
 nav {
     background-color: var(--navbar-bg);
@@ -70,7 +72,7 @@ nav ul {
 nav li a {
     display: block;
     color: var(--menu);
-    font-family: 'Cabin', sans-serif;
+    font-family: var(--sans-serif-font);
     padding: 12px 20px;
 }
 
@@ -95,7 +97,7 @@ nav li a:hover {
     padding-right: 1em;
 }
 
-/* Main body styling */
+/* Main Body Styling */
 
 main {
     overflow-y: auto;
@@ -109,16 +111,16 @@ main {
 }
 
 h1 {
-    font-family: 'Inknut Antiqua', serif;
+    font-family: var(--serif-font);
     color: var(--heading);
 }
 
 p {
-    font-family: 'Cabin', sans-serif;
+    font-family: var(--sans-serif-font);
     color: var(--body);
 }
 
-/* Home page body styling */
+/* Home Page Styling */
 
 .card-container {
     width: 100%;
@@ -171,12 +173,12 @@ p {
 
 .post-event {
     width: 300px;
-    font-family: 'Cabin', sans-serif;
+    font-family: var(--sans-serif-font);
     font-size: 1rem;
     padding: 1px 16px;
 }
 
-/* Contact page styling */
+/* Contact Page Styling */
 
 .about-me {
     display: flex;
@@ -194,6 +196,44 @@ p {
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
+}
+
+/* Form Styling */
+
+.form-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.form-container label {
+    color: var(--gray);
+    padding: 12px 5px 12px 0;
+}
+
+.form-container input[type=text],
+.form-container input[type=number], 
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.form-container textarea {
+    height: 150px;
+}
+
+.form-container input[type=submit] {
+    width: 100%;
+    background-color: var(--orange);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    padding: 7px 12px;
+    margin-top: 20px;
 }
 
 /* Media Queries */
@@ -269,6 +309,7 @@ p {
     .rachel-dancing {
         margin-right: 20px;
     }
+
 }
 
 /* Large Desktop Size */
@@ -341,4 +382,5 @@ p {
     .rachel-dancing {
         margin-right: 20px;
     }
+
 }

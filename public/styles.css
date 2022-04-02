@@ -218,7 +218,9 @@ p {
 .form-container input[type=text],
 .form-container input[type=number], 
 .form-container select,
-.form-container textarea {
+.form-container textarea,
+.form-container input[type=date],
+.form-container input[type=time] {
     width: 100%;
     padding: 5px;
     border-radius: 10px;

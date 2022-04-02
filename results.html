@@ -13,7 +13,7 @@
     <div class="wrapper">
         <nav>
             <a href="home.html">
-                <h1>Contra Search</h1>
+                <h1>Contra&nbsp;Search</h1>
             </a>
             <a href="home.html">
                 <img src="public/images/contrastar.svg" alt="Vector drawing of four brightly colored people turning in a star formation with their hand on the wrist of the person in front of them.">
@@ -30,38 +30,91 @@
            <main>
                 <div class="wrapper-inner">
                     <section>
-                        <input type="text" placeholder="Enter Zipcode" name="search">
-                        <button type="submit"><i class="fas fa-search"></i></button>
+                        <div class="small-card">
+                            <div class="small-search">
+                                <input type="text" class="small-search-term" placeholder="Enter Zipcode">
+                                <button type="submit" class="small-search-button">
+                                    <i class="fas fa-search fa-lg"></i>
+                                </button>
+                            </div>
+                            <div class="post-event">
+                                <a href="post-event.html">Post an event <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
                     </section>
                     <section>
-                        <div class="result"><p>[Name of Event]</p>
-                            <p>[Name of Organization]</p>
-                            <p>[Where]</p>
-                            <p>[Date]</p>
-                            <p>[Time]</p>
-                            <p>[Description]</p>
-                            <p>[Website Link]</p></div>
-                        <div class="result"><p>Snow Day: A Flurry Festival Fundraising Concert</p>
-                            <p>Dance Flurry Organization</p>
-                            <p>Online</p>
-                            <p>Friday, February 18, 2022</p>
-                            <p>7:00 pm - 11:00 pm</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, saepe culpa harum repudiandae inventore, dolorem ipsam vitae cum, ipsum non eum quae deserunt mollitia voluptates sunt quaerat aliquid voluptatum asperiores?</p>
-                            <p>https://www.flurryfestival.org/</p></div>
-                        <div class="result"><p>The Flurry Festival</p>
-                            <p>Dance Flurry Organization</p>
-                            <p>Saratoga Springs City Center / Hilton Hotel, 522 Broadway, Saratoga Springs, NY 12866</p>
-                            <p>February 17-19, 2023</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolorum sequi facere esse molestias voluptatibus enim unde magni libero ipsam. Ex tempore sint corrupti? Exercitationem, repellat. Aperiam saepe excepturi quam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio recusandae eum, molestiae saepe expedita voluptates minima, quia quis dolor impedit sunt totam repellendus sit voluptatem, pariatur aliquam a reiciendis repellat.</p>
-                            <p>https://www.flurryfestival.org/</p></div>
-                    
-                        <div class="result"><p>BIDA Sunday Night Contra Dance</p>
-                            <p>Boston Intergenerational Dance Advocates (BIDA)</p>
-                            <p>1950 Massachusetts Ave, Cambridge, MA 02140</p>
-                            <p>Sunday, March 6, 2022</p>
-                            <p>7:00 pm - 10:30 pm</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere adipisci corporis aliquam ipsam repellendus explicabo nulla ducimus provident, deserunt delectus cum, animi voluptates! Saepe, eum sed! Alias, ea vitae?</p>
-                            <p>https://www.bidadance.org/</p></div>
+                        <div class="search-results-container">
+                            <div class="event-item">
+                                <div class="logo-container">
+                                    <!-- The heading will serve as a stand-in when a logo image doesn't exist or isn't provided -->
+                                    <h2>BOS</h2>
+                                    <!-- <img href="#" alt="logo"> -->
+                                </div>
+                                <div class="event-listing">
+                                    <ul>
+                                        <li><h3>[Name of Event]</h3></li>
+                                        <li>[Name of Organization]</li>
+                                        <li>[Where]</li>
+                                        <li>[Date]</li>
+                                        <li>[Time]</li>
+                                        <li>[Description]</li>
+                                        <li><a href="#">[Website Link]</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="event-item">
+                                <div class="logo-container">
+                                    <h2>VIR</h2>
+                                    <!-- <img href="#" alt="logo"> -->
+                                </div>
+                                <div class="event-listing">
+                                    <ul>
+                                        <li><h3>Snow Day: A Flurry Festival Fundraising Concert</h3></li>
+                                        <li>Dance Flurry Organization</li>
+                                        <li>Online</li>
+                                        <li>Friday, February 18, 2022</li>
+                                        <li>7:00 pm - 11:00 pm</li>
+                                        <li>Lorem ilisum dolor sit amet consectetur adipisicing elit. Atque, saepe culpa harum repudiandae inventore, dolorem ipsam vitae cum, ipsum non eum quae deserunt mollitia voluptates sunt quaerat aliquid voluptatum asperiores?</li>
+                                        <li><a href="https://www.flurryfestival.org/">https://www.flurryfestival.org/</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="event-item">
+                                <div class="logo-container">
+                                    <h2>ALB</h2>
+                                    <!-- <img href="#" alt="logo"> -->
+                                </div>
+                                <div class="event-listing">
+                                    <ul>
+                                        <li><h3>The Flurry Festival</h3></li>
+                                        <li>Dance Flurry Organization</li>
+                                        <li>Saratoga Springs City Center / Hilton Hotel, 522 Broadway, Saratoga Springs, NY 12866</li>
+                                        <li>February 17-19, 2023</li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolorum sequi facere esse molestias voluptatibus enim unde magni libero ipsam. Ex tempore sint corrupti? Exercitationem, repellat. Aperiam saepe excepturi quam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio recusandae eum, molestiae saepe expedita voluptates minima, quia quis dolor impedit sunt totam repellendus sit voluptatem, pariatur aliquam a reiciendis repellat.</li>
+                                        <li><a href="https://www.flurryfestival.org/">https://www.flurryfestival.org/</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="logo-container">
+                                    <h2>CAM</h2>
+                                    <!-- <img href="#" alt="logo"> -->
+                                </div>
+                                <div class="event-listing">
+                                    <ul>
+                                        <li><h3>BIDA Sunday Night Contra Dance</h3></li>
+                                        <li>Boston Intergenerational Dance Advocates (BIDA)</li>
+                                        <li>1950 Massachusetts Ave, Cambridge, MA 02140</li>
+                                        <li>Sunday, March 6, 2022</li>
+                                        <li>7:00 pm - 10:30 pm</li>
+                                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere adipisci corporis aliquam ipsam repellendus explicabo nulla ducimus provident, deserunt delectus cum, animi voluptates! Saepe, eum sed! Alias, ea vitae?</li>
+                                        <li><a href="https://www.bidadance.org/">https://www.bidadance.org/</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                 </div>
            </main>

@@ -171,7 +171,8 @@ p {
     height: 46px;
     border: 1px solid var(--orange);
     background: var(--orange);
-    text-align: center;
+    display: flex;
+    align-items: center;
     color: var(--white);
     border-radius: 0 5px 5px 0;
   }
@@ -243,7 +244,7 @@ p {
     margin-top: 20px;
 }
 
-/* Search Results Page */
+/* Search Results Page Styling */
 
 .small-card {
     padding: 20px 0;
@@ -259,7 +260,7 @@ p {
   }
 
 .small-search-term {
-    width: 300px;
+    width: 200px;
     border: 3px solid var(--orange);
     border-right: none;
     padding: 5px;
@@ -270,17 +271,19 @@ p {
   }
   
 .small-search-button {
-    width: 70px;
+    width: 50px;
     height: 36px;
     border: 1px solid var(--orange);
     background: var(--orange);
-    text-align: center;
+    display: flex;
+    align-items: center;
     color: var(--white);
     border-radius: 0 5px 5px 0;
   }
 
 .event-item {
     background-color: var(--white);
+    color: var(--gray);
     border-left: solid 10px var(--bright-purple);
     border-top: solid 1px var(--gray);
     border-right: solid 1px var(--gray);
@@ -314,6 +317,57 @@ p {
 
 .event-listing li {
     padding: 3px;
+}
+
+/* Admin Page Styling */
+
+button {
+    color: var(--white);
+    font-size: 0.75em; /*mobile*/
+    border: none;
+    border-radius: 10px;
+    padding: 7px 12px;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.new-event-button,
+.delete-button {
+    background-color: var(--orange);
+}
+
+.edit-button {
+    background-color: var(--purple);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+thead {
+    background-color: lightgray;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+th,
+td {
+    border: solid 2px black;
+    padding: 10px;
+    font-size: 0.75em; /*mobile*/
+}
+
+th {
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /* Media Queries */
@@ -390,6 +444,23 @@ p {
         margin-right: 20px;
     }
 
+    .small-search-term {
+        width: 300px;
+    }
+
+    .small-search-button {
+        width: 50px;
+    }
+
+    button {
+        font-size: 0.85rem;
+    }
+
+    th,
+    td {
+        font-size: 0.85rem;
+    }
+
 }
 
 /* Large Desktop Size */
@@ -461,6 +532,15 @@ p {
 
     .rachel-dancing {
         margin-right: 20px;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    th,
+    td {
+        font-size: 1rem;
     }
 
 }

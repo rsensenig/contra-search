@@ -6,11 +6,12 @@
     --aqua: #C9FFE5;
     --purple: #614051;
     --bright-purple: #9B598D;
-    --white: #FFFFF0;
+    --ivory: #FFFFF0;
+    --white: #FFFFFF;
     --gray: #594A4B;
 
     --navbar-bg: var(--yellow);
-    --main-bg: var(--white);
+    --main-bg: var(--ivory);
     --heading: var(--purple);
     --body: var(--gray);
     --menu: var(--gray);
@@ -27,7 +28,7 @@ body {
     overflow: hidden;
     height: 100vh;
     margin: 0;
-    background-color: var(--white);
+    background-color: var(--ivory);
     font-family: var(--sans-serif-font);
 }
 
@@ -141,7 +142,7 @@ p {
     width: 300px;
     padding: 2px 1px 4px 1px;
     border-radius: 5px;
-    background-color: var(--white);
+    background-color: var(--ivory);
     overflow: hidden;
 }
 
@@ -171,7 +172,7 @@ p {
     border: 1px solid var(--orange);
     background: var(--orange);
     text-align: center;
-    color: #fff;
+    color: var(--white);
     border-radius: 0 5px 5px 0;
   }
 
@@ -234,7 +235,7 @@ p {
 .form-container input[type=submit] {
     width: 100%;
     background-color: var(--orange);
-    color: white;
+    color: var(--white);
     font-size: 1rem;
     border: none;
     border-radius: 10px;
@@ -247,7 +248,7 @@ p {
 .small-card {
     padding: 20px 0;
     border-radius: 5px;
-    background-color: var(--white);
+    background-color: var(--ivory);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -274,12 +275,12 @@ p {
     border: 1px solid var(--orange);
     background: var(--orange);
     text-align: center;
-    color: #fff;
+    color: var(--white);
     border-radius: 0 5px 5px 0;
   }
 
 .event-item {
-    background-color: white;
+    background-color: var(--white);
     border-left: solid 10px var(--bright-purple);
     border-top: solid 1px var(--gray);
     border-right: solid 1px var(--gray);
@@ -299,7 +300,7 @@ p {
 .logo-container h2 {
     border: solid 20px gray;
     border-radius: 50%;
-    color: white;
+    color: var(--white);
     background-color: gray;
 }
 

@@ -105,6 +105,10 @@ main {
     width: 100%;
 }
 
+section:last-of-type {
+    padding-bottom: 10px;
+}
+
 .wrapper-inner {
     width: 85%;
     height: 100vh;

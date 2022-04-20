@@ -42,9 +42,10 @@ body {
 
 nav {
     background-color: var(--navbar-bg);
+    width: auto;
     padding: 0.5rem;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: center;
 }
 

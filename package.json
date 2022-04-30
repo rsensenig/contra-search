@@ -1,7 +1,7 @@
 {
   "name": "personal-project",
   "version": "1.0.0",
-  "description": "This is a web app that shows event information for contra dances across the United States. You can search for events based on zip code.",
+  "description": "This is a web app that shows event information for contra dances across New England. You can search for events based on zip code.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.15",
+    "nodemon": "^2.0.16",
     "uuid": "^8.3.2"
   }
 }

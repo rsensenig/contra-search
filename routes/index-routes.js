@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.use('/', siteRouter);
 // router.use('/admin', adminRouter);
-// router.use('/events', eventsRouter);
+router.use('/events', eventsRouter);
 
 module.exports = router;

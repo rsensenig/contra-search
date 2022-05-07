@@ -11,11 +11,11 @@ router.route('/results')
     .get(eventsCtrl.events_results)
     .post(eventsCtrl.search_events_post)
 
+router.route('/submit-event')
+    .get(eventsCtrl.event_submit)
+
 router.route('/:_id')
     .get(eventsCtrl.event_detail)
     .put(eventsCtrl.event_update_put)
-
-router.route('/submit-event')
-    .get(eventsCtrl.event_submit)
 
 module.exports = router;

@@ -5,9 +5,7 @@ const eventsRouter = require('./events-routes');
 const router = express.Router();
 
 router.use('/', siteRouter);
-// router.use('/admin', adminRouter);
+router.use('/admin', adminRouter);
 router.use('/events', eventsRouter);
-
-console.log('Index routes is working.');
 
 module.exports = router;

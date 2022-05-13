@@ -1,8 +1,7 @@
-const { v4:uuid } = require('uuid');
+// const { v4:uuid } = require('uuid');
 
 module.exports = [
     {
-        _id: 001,
         title: 'Snow Day: A Flurry Festival Fundraising Concert',
         organization: 'Dance Flurry Organization',
         street: 'Online',
@@ -20,7 +19,6 @@ module.exports = [
         needsReview: false
     },
     {
-        _id: uuid(),
         title: 'The Flurry Festival',
         organization: 'Dance Flurry Organization',
         street: '522 Broadway',
@@ -38,7 +36,6 @@ module.exports = [
         needsReview: false
     },
     {
-        _id: uuid(),
         title: 'BIDA Sunday Night Contra Dance',
         organization: 'Boston Intergenerational Dance Advocates (BIDA)',
         street: '1950 Massachusetts Ave',

@@ -16,6 +16,8 @@ app.use(express.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
 
+require('./config/connection');
+
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });

@@ -1,7 +1,7 @@
 const express = require('express');
 const siteRouter = require('./site-routes');
 const adminRouter = require('./admin-routes');
-const eventsRouter = require('./events-routes');
+const eventsRouter = require('./event-routes');
 const router = express.Router();
 
 router.use('/', siteRouter);

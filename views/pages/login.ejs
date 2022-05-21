@@ -1,0 +1,26 @@
+<%- include('../partials/head') -%>
+
+<%- include('../partials/nav') -%>
+
+    <main>
+        <div class="container">
+            <h1>Login</h1>
+            <div class="form-container">
+                <form action="/login" method="POST">
+                    <div>
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" placeholder="Username" required>
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="text" name="password" id="password" placeholder="Password" minlength="10" required>
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') -%>
+    
+</html>

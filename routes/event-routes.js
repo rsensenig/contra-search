@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const eventCtrl = require('/controllers/event-controller');
+const eventCtrl = require('../controllers/event-controller');
 
 // ROUTES
 router.route('/')

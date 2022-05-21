@@ -32,11 +32,11 @@ const eventSchema = new Schema({
         minlength: [5, 'Minimum length for zip code is 5 characters.']
     },
     startDatetime: {
-        type: Datetime,
+        type: Date,
         required: [true, 'A start date and time is required.']
     },
     endDatetime: {
-        type: Datetime,
+        type: Date,
         required: [true, 'An end date and time is required.']
     },
     description: {

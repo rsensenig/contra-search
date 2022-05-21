@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const {Schema} = mongoose;
 
-const messageSchema = new Message({
+const messageSchema = new Schema({
     name: {
         type: String,
         required: [true, 'A name is required.'],
@@ -10,7 +10,7 @@ const messageSchema = new Message({
     },
     message: {
         type: String,
-        required: [true, 'A message is rqeuired.'],
+        required: [true, 'A message is required.'],
         minlength: [1, 'Minimum length for the message is 1 character.']
     }
 });

@@ -1,4 +1,5 @@
 const Message = require('../models/message-model');
+const User = require('../models/user-model');
 const passport = require('passport');
 
 module.exports = {
@@ -39,7 +40,7 @@ module.exports = {
                 console.log(`The error at login is: ${error}`);
             } else {
                 passport.authenticate('local')(req, res, () => {
-                    res.redirect('/admin-console');
+                    res.redirect('/admin');
                 });
             }
         });

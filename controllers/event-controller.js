@@ -1,5 +1,6 @@
 const { modelNames } = require('mongoose');
 const Event = require('../models/event-model');
+const {Client} = require("@googlemaps/google-maps-services-js");
 
 module.exports = {
     search_events_post: (req,res) => {
@@ -8,9 +9,29 @@ module.exports = {
         res.redirect('pages/results');
     },
     events_results_get: (req, res) => {
+        const client = new Client({});
+
+        client
+        .geocode({
+            params: {
+            address: '02155', //TO DO: change to request variable
+            key: process.env.GOOGLE_API_KEY,
+            },
+            timeout: 1000, // milliseconds
+        })
+        .then((response) => {
+            const location = response.data.results[0].geometry.location;
+            res.render('pages/results', {
+                location: location
+            });
+        })
+        .catch((e) => {
+            console.log(e);
+            // console.log(e.response.data.error_message);
+        });
         // eventually put in parameters in here?
         // eventually store events that you find based on zipcode in a variable here?
-        res.render('pages/results');
+        
         // put in data here for search results
     },
     event_detail_get: (req, res) => {

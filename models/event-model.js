@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const eventSchema = new Schema({
-    title: {
+    eventName: {
         type: String,
-        required: [true, 'A title is required.'],
-        minlength: [1, 'Minimum length for the title is 1 character.']
+        required: [true, 'An event name is required.'],
+        minlength: [1, 'Minimum length for the event name is 1 character.']
     },
     organization: {
         type: String,

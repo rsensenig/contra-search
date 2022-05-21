@@ -1,3 +1,4 @@
+const { modelNames } = require('mongoose');
 const Event = require('../models/event-model');
 
 module.exports = {

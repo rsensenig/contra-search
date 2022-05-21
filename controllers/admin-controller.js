@@ -1,22 +1,34 @@
-const eventsData = require('../data/events-data');
-const { v4:uuid } = require('uuid');
+const Event = require('../models/event-model');
 
 module.exports = {
-    admin: (req, res) => {
-        res.render('pages/admin');
+    admin_get: (req, res) => {
+        if(req.isAuthenticated()) {
+            Event.find({}, (error, allEvents) => {
+                if(error) {
+                    return error;
+                } else {
+                    res.render('pages/admin');
+                }
+            });
+        }
     },
     event_delete: (req, res) => {
-        // const {_id} = req.params;
-        // once Event schema is created, use deleteOne method here to delete the event with the id indicated in the params
-        res.redirect('/admin');
+        const {_id} = req.params;
+        Event.deleteOne({_id: _id}, error => {
+            if(error) {
+                return error;
+            } else {
+                res.redirect('/admin');
+            }
+        })
     },
-    event_create: (req, res) => {
+    event_create_get: (req, res) => {
         res.render('pages/create');
     },
-    inbox: (req, res) => {
+    inbox_get: (req, res) => {
         res.render('pages/inbox');
     },
-    event_update: (req, res) => {
+    event_update_get: (req, res) => {
         res.render('pages/event_update');
     }
 }

@@ -9,7 +9,9 @@ const eventSchema = new Schema({
         minlength: [1, 'Minimum length for the title is 1 character.']
     },
     organization: {
-        type: String
+        type: String,
+        required: [true, 'An organization or host name is required.'],
+        minlength: [1, 'Minimum length for organization is 1 character.']
     },
     street: {
         type: String,
@@ -27,23 +29,18 @@ const eventSchema = new Schema({
     zipCode: {
         type: String,
         required: [true, 'A zip code is required.'],
-        minlength: [1, 'Minimum length for zip code is 5 characters.']
+        minlength: [5, 'Minimum length for zip code is 5 characters.']
     },
-    date: {
-        type: Date,
-        required: [true, 'A date is required.']
+    startDatetime: {
+        type: Datetime,
+        required: [true, 'A start date and time is required.']
     },
-    startTime: {
-        type: Time,
-        required: [true, 'A start time is required.']
-    },
-    endTime: {
-        type: Time,
-        required: [true, 'An end time is required.']
+    endDatetime: {
+        type: Datetime,
+        required: [true, 'An end date and time is required.']
     },
     description: {
         type: String,
-        required: [true, 'A description is required, including COVID-19 precautions.']
     },
     website: {
         type: String

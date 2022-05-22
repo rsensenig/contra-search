@@ -8,10 +8,12 @@
                 <div class="card">
                     <p>Find a dance near you!</p>
                      <div class="search">
-                        <input type="text" class="search-term" placeholder="Enter Zipcode">
-                        <button type="submit" class="search-button">
-                            <i class="fas fa-search fa-2x"></i>
-                        </button>
+                        <form class="search-form" action="/events/results" method="GET">
+                            <input type="text" name="zipCode" id="zipCode" class="search-term" placeholder="Enter Zip Code">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-search fa-2x"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
                 <div class="post-event">

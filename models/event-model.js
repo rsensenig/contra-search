@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const eventSchema = new Schema({
-    eventName: {
+    title: {
         type: String,
-        required: [true, 'An event name is required.'],
+        required: [true, 'An event title is required.'],
         minlength: [1, 'Minimum length for the event name is 1 character.']
     },
     organization: {

@@ -1,36 +1,45 @@
-const { modelNames } = require('mongoose');
 const Event = require('../models/event-model');
 const {Client} = require("@googlemaps/google-maps-services-js");
 
 module.exports = {
-    search_events_post: (req,res) => {
-        // eventually put in parameters in here?
-        // eventually store events that you find based on zipcode in a variable here?
-        res.redirect('pages/results');
-    },
-    events_results_get: (req, res) => {
+    event_results_get: (req, res) => {
+        console.log(req.query.zipCode);
+        // call the geocode method on the client class
         const client = new Client({});
 
         client
         .geocode({
             params: {
-            address: '02155', //TO DO: change to request variable
+            address: req.query.zipCode,
             key: process.env.GOOGLE_API_KEY,
             },
             timeout: 1000, // milliseconds
         })
         .then((response) => {
             const location = response.data.results[0].geometry.location;
-            res.render('pages/results', {
-                location: location
+            // find all the events in the events collection
+            Event.find({}, (error, allEvents) => {
+                if(error) {
+                    return error;
+                } else {
+                    // render the results page
+                    res.render('pages/results', {
+                        // and include the data for all the events
+                        eventsArray: allEvents,
+                        location: location
+                    });
+                }
             });
+            
         })
-        .catch((e) => {
-            console.log(e);
-            // console.log(e.response.data.error_message);
+        .catch((error) => {
+            console.log(`Google came back with this error: ${error}`);
+            // TO DO: render results page with error message
         });
+
+
         // eventually put in parameters in here?
-        // eventually store events that you find based on zipcode in a variable here?
+        // eventually store events that you find based on zip code in a variable here?
         
         // put in data here for search results
     },

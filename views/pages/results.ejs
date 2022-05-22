@@ -3,10 +3,10 @@
 <%- include('../partials/nav') -%>
 
            <main>
-               <p><%= JSON.stringify(location.lat) %></p>
-               <p><%= JSON.stringify(location.lng) %></p>
                 <div class="wrapper-inner">
                     <section>
+                        <p><%= location.lat %></p>
+                        <p><%= location.long %></p>
                         <div class="small-card">
                             <div class="small-search">
                                 <input type="text" class="small-search-term" placeholder="Enter Zipcode">
@@ -22,76 +22,29 @@
                     <section>
                         <div class="search-results-container">
                             <!-- The event-item divs are mock-ups of how I want the search results to look, later on I will be adding JavaScript so that search results will be pulled from a database -->
-                            <div class="event-item">
-                                <div class="logo-container">
-                                    <!-- The heading will serve as a stand-in when a logo image doesn't exist or isn't provided -->
-                                    <h2>BOS</h2>
-                                    <!-- <img href="#" alt="logo"> -->
+                            <% for (event of eventsArray) { %>
+                                <div class="event-item">
+
+                                    <div class="logo-container">
+                                        <!-- The heading will serve as a stand-in when a logo image doesn't exist or isn't provided -->
+                                        <h2>BOS</h2>
+                                        <!-- <img href="#" alt="logo"> -->
+                                    </div>
+                                    
+                                    <div class="event-listing">
+                                        <ul>
+                                            <li><h3><%= event.title %></h3></li>
+                                            <li><%= event.organization %></li>
+                                            <li><%= event.street %>, <%= event.city %>, <%= event.state %> <%= event.zipCode %></li>
+                                            <li><%= event.startDatetime %></li>
+                                            <li><%= event.endDatetime %></li>
+                                            <li><%= event.description %></li>
+                                            <li><a href="<%= event.website %>"><%= event.website %></a></li>
+                                        </ul>
+                                    </div>
+
                                 </div>
-                                <div class="event-listing">
-                                    <ul>
-                                        <li><h3>[Name of Event]</h3></li>
-                                        <li>[Name of Organization]</li>
-                                        <li>[Where]</li>
-                                        <li>[Date]</li>
-                                        <li>[Time]</li>
-                                        <li>[Description]</li>
-                                        <li><a href="#">[Website Link]</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="event-item">
-                                <div class="logo-container">
-                                    <h2>VIR</h2>
-                                    <!-- <img href="#" alt="logo"> -->
-                                </div>
-                                <div class="event-listing">
-                                    <ul>
-                                        <li><h3>Snow Day: A Flurry Festival Fundraising Concert</h3></li>
-                                        <li>Dance Flurry Organization</li>
-                                        <li>Online</li>
-                                        <li>Friday, February 18, 2022</li>
-                                        <li>7:00 pm - 11:00 pm</li>
-                                        <li>Lorem ilisum dolor sit amet consectetur adipisicing elit. Atque, saepe culpa harum repudiandae inventore, dolorem ipsam vitae cum, ipsum non eum quae deserunt mollitia voluptates sunt quaerat aliquid voluptatum asperiores?</li>
-                                        <li><a href="https://www.flurryfestival.org/">https://www.flurryfestival.org/</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="event-item">
-                                <div class="logo-container">
-                                    <h2>ALB</h2>
-                                    <!-- <img href="#" alt="logo"> -->
-                                </div>
-                                <div class="event-listing">
-                                    <ul>
-                                        <li><h3>The Flurry Festival</h3></li>
-                                        <li>Dance Flurry Organization</li>
-                                        <li>Saratoga Springs City Center / Hilton Hotel, 522 Broadway, Saratoga Springs, NY 12866</li>
-                                        <li>February 17-19, 2023</li>
-                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolorum sequi facere esse molestias voluptatibus enim unde magni libero ipsam. Ex tempore sint corrupti? Exercitationem, repellat. Aperiam saepe excepturi quam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio recusandae eum, molestiae saepe expedita voluptates minima, quia quis dolor impedit sunt totam repellendus sit voluptatem, pariatur aliquam a reiciendis repellat.</li>
-                                        <li><a href="https://www.flurryfestival.org/">https://www.flurryfestival.org/</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="event-item">
-                                <div class="logo-container">
-                                    <h2>CAM</h2>
-                                    <!-- <img href="#" alt="logo"> -->
-                                </div>
-                                <div class="event-listing">
-                                    <ul>
-                                        <li><h3>BIDA Sunday Night Contra Dance</h3></li>
-                                        <li>Boston Intergenerational Dance Advocates (BIDA)</li>
-                                        <li>1950 Massachusetts Ave, Cambridge, MA 02140</li>
-                                        <li>Sunday, March 6, 2022</li>
-                                        <li>7:00 pm - 10:30 pm</li>
-                                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere adipisci corporis aliquam ipsam repellendus explicabo nulla ducimus provident, deserunt delectus cum, animi voluptates! Saepe, eum sed! Alias, ea vitae?</li>
-                                        <li><a href="https://www.bidadance.org/">https://www.bidadance.org/</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <% } %>
                         </div>
                     </section>
                 </div>

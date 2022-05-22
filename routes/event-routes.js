@@ -8,8 +8,7 @@ router.route('/')
     .post(eventCtrl.event_create_post)
 
 router.route('/results')
-    .get(eventCtrl.events_results_get)
-    .post(eventCtrl.search_events_post)
+    .get(eventCtrl.event_results_get)
 
 router.route('/submit-event')
     .get(eventCtrl.event_submit_get)

@@ -3,8 +3,6 @@ const {Client} = require("@googlemaps/google-maps-services-js");
 
 module.exports = {
     event_results_get: (req, res) => {
-        console.log(req.query.zipCode);
-        // call the geocode method on the client class
         const client = new Client({});
 
         client
@@ -17,7 +15,6 @@ module.exports = {
         })
         .then((response) => {
             const location = response.data.results[0].geometry.location;
-            // find all the events in the events collection
             const METERS_PER_MILE = 1609.34;
             Event.find({ location: { 
                 $nearSphere: { 
@@ -33,9 +30,7 @@ module.exports = {
                     console.log(error);
                     return error;
                 } else {
-                    // render the results page
                     res.render('pages/results', {
-                        // and include the data for all the events
                         eventsArray: allEvents,
                         location: location
                     });

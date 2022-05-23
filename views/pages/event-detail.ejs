@@ -1,0 +1,19 @@
+<%- include('../partials/head') -%>
+
+<%- include('../partials/nav') -%>
+
+    <main>
+        <div class="wrapper-inner">
+            <h1><%= foundEvent.title %></h1>
+            <h2>Presented by: <%= foundEvent.organization %></h2>
+            <h3>Where: <%= foundEvent.street %>, <%= foundEvent.city %>, <%= foundEvent.state %> <%= foundEvent.zipCode %></h3>
+            <h3>Starts: <%= foundEvent.startDatetime %></h3>
+            <h3>Ends: <%= foundEvent.endDatetime %></h3>
+            <p><%= foundEvent.description %></p>
+            <p><a href="<%= foundEvent.website %>"><%= foundEvent.website %></a></p>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') -%>
+
+    </html>

@@ -18,8 +18,19 @@ module.exports = {
         .then((response) => {
             const location = response.data.results[0].geometry.location;
             // find all the events in the events collection
-            Event.find({}, (error, allEvents) => {
+            const METERS_PER_MILE = 1609.34;
+            Event.find({ location: { 
+                $nearSphere: { 
+                    $geometry: { 
+                        type: "Point", 
+                        coordinates: [ location.lng, location.lat ] 
+                    }, 
+                    $maxDistance: 5 * METERS_PER_MILE 
+                } 
+            } },
+            (error, allEvents) => {
                 if(error) {
+                    console.log(error);
                     return error;
                 } else {
                     // render the results page
@@ -36,12 +47,6 @@ module.exports = {
             console.log(`Google came back with this error: ${error}`);
             // TO DO: render results page with error message
         });
-
-
-        // eventually put in parameters in here?
-        // eventually store events that you find based on zip code in a variable here?
-        
-        // put in data here for search results
     },
     event_detail_get: (req, res) => {
         let id = req.params._id;

@@ -44,7 +44,7 @@ module.exports = {
         });
     },
     event_detail_get: (req, res) => {
-        let id = req.params._id;
+        let {_id} = req.params;
         Event.findOne({_id: _id}, (error, foundEvent) => {
             if(error) {
                 return error;

@@ -5,12 +5,13 @@
     <main>
         <div class="wrapper-inner">
             <h1><%= foundEvent.title %></h1>
-            <h2>Presented by: <%= foundEvent.organization %></h2>
-            <h3>Where: <%= foundEvent.street %>, <%= foundEvent.city %>, <%= foundEvent.state %> <%= foundEvent.zipCode %></h3>
-            <h3>Starts: <%= foundEvent.startDatetime %></h3>
-            <h3>Ends: <%= foundEvent.endDatetime %></h3>
+            <h3><span class="category">Presented by:</span> <%= foundEvent.organization %></h3>
+            <h5><span class="category">Location:</span> <%= foundEvent.street %>, <%= foundEvent.city %>, <%= foundEvent.state %> <%= foundEvent.zipCode %></h5>
+            <h5><span class="category">Starts:</span> <%= foundEvent.startDatetime %></h5>
+            <h5><span class="category">Ends:</span> <%= foundEvent.endDatetime %></h5>
             <p><%= foundEvent.description %></p>
             <p><a href="<%= foundEvent.website %>"><%= foundEvent.website %></a></p>
+            <br>
         </div>
     </main>
 

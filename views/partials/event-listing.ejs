@@ -4,14 +4,12 @@
             <%= event.title %>
         </td>
         <td>
-            <a href="">
-                <!-- when update page is created, hyperlink to that page -->
+            <a href="/admin/update/<%= foundEvent._id %>">
                 <button type="button" class="edit-button">Edit</button>
             </a>
         </td>
         <td>
-            <form action="#"> 
-                <!-- when event detail page is created can have action be for event detail page with method as DELETE -->
+            <form action="/events/<%= foundEvent._id %>?method=DELETE" method="POST"> 
                 <button type="button" class="delete-button">Delete</button>
             </form>
         </td>

@@ -7,7 +7,9 @@ module.exports = {
                 if(error) {
                     return error;
                 } else {
-                    res.render('pages/admin');
+                    res.render('pages/admin', {
+                        eventsArray: allEvents
+                    });
                 }
             });
         }
@@ -23,12 +25,27 @@ module.exports = {
         })
     },
     event_create_get: (req, res) => {
-        res.render('pages/create');
+        if(req.isAuthenticated()) {
+            res.render('pages/create');
+        } else {
+            res.redirect('/login');
+        }
     },
     inbox_get: (req, res) => {
         res.render('pages/inbox');
     },
     event_update_get: (req, res) => {
-        res.render('pages/event_update');
+        if(req.isAuthenticated()) {
+            const {_id} = req.params;
+            Event.findOne({_id: _id}, (error, foundEvent) => {
+                if(error) {
+                    return error;
+                } else {
+                    res.render('pages/update', {
+                        foundEvent: foundEvent
+                    });
+                }
+            })
+        }
     }
 }

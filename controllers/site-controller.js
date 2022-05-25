@@ -45,6 +45,18 @@ module.exports = {
             }
         });
     },
+    register_post: (req, res) => {
+        const {username, password} = req.body;
+        User.register({username: username}, password, (error, user) => {
+            if(error) {
+                console.log(`The error at register is: ${error}`);
+            } else {
+                passport.authenticate('local')(req, res, () => {
+                    res.redirect('/login');
+                });
+            }
+        });
+    },
     logout_get: (req, res) => {
         req.logout();
         res.redirect('/');

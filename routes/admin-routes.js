@@ -13,7 +13,7 @@ router.route('/create-event')
 router.route('/inbox')
     .get(adminCtrl.inbox_get)
 
-router.route('/update-event/:_id')
+router.route('/update/:_id')
     .get(adminCtrl.event_update_get)
 
 module.exports = router;

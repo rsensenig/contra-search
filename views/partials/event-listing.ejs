@@ -4,12 +4,12 @@
             <%= event.title %>
         </td>
         <td>
-            <a href="/admin/update/<%= foundEvent._id %>">
+            <a href="/admin/update/<%= event._id %>">
                 <button type="button" class="edit-button">Edit</button>
             </a>
         </td>
         <td>
-            <form action="/events/<%= foundEvent._id %>?method=DELETE" method="POST"> 
+            <form action="/events/<%= event._id %>?method=DELETE" method="POST"> 
                 <button type="button" class="delete-button">Delete</button>
             </form>
         </td>

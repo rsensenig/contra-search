@@ -20,6 +20,9 @@ router.route('/login')
     .get(siteCtrl.login_get)
     .post(siteCtrl.login_post)
 
+router.route('/login/register')
+    .post(siteCtrl.register_post)
+
 router.route('/logout')
     .get(siteCtrl.logout_get);
 

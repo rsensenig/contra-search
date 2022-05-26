@@ -17,7 +17,7 @@
                             <input type="text" name="city" id="city" value="<%= foundEvent.city %>" minlength="1" required></div>
                         <div><label for="state">State:</label>
                             <select name="state" id="state">
-                                <option value="" selected disabled>Select</option>
+                                <option value="" selected disabled>state value stored in database</option>
                                 <!-- <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
                                 <option value="AZ">Arizona</option>
@@ -77,7 +77,7 @@
                         <div><label for="endDatetime">Select End Date and Time:</label>
                             <input type="datetime" name="endDatetime" id="endDatetime" value="<%= foundEvent.endDatetime %>" required></div>
                         <div><label for="description">Description:</label>
-                            <textarea name="description" id="description" value="<%= foundEvent.description %>"></textarea></div>
+                            <textarea name="description" id="description" rows="2" cols="20">description value stored in database</textarea></div>
                         <div><label for="website">Website Link:</label>
                             <input type="text" name="website" id="website" value="<%= foundEvent.website %>"></div>
                         <input type="submit" value="Submit">

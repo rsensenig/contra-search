@@ -59,7 +59,7 @@ module.exports = {
         res.render('pages/submit-event');
     },
     event_submit_post: (req, res) => {
-        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website, needsReview} = req.body;
+        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website} = req.body;
         const newEvent = new Event ({
             title: title,
             organization: organization,
@@ -80,7 +80,7 @@ module.exports = {
         // alternatively do not redirect, and have if statement EJS template display thank you message
     },
     event_create_post: (req, res) => {
-        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website, needsReview} = req.body;
+        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website} = req.body;
         const newEvent = new Event ({
             title: title,
             organization: organization,
@@ -101,7 +101,7 @@ module.exports = {
     },
     event_update_put: (req, res) => {
         const {_id} = req.params;
-        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website, needsReview} = req.body;
+        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website} = req.body;
         Event.findByIdAndUpdate(_id, {$set: {
             title: title,
             organization: organization,
@@ -121,5 +121,15 @@ module.exports = {
                 res.redirect('/admin');
             }
         });
+    },
+    event_delete: (req, res) => {
+        const {_id} = req.params;
+        Event.deleteOne({_id: _id}, error => {
+            if(error) {
+                return error;
+            } else {
+                res.redirect('/admin');
+            }
+        })
     }
 }

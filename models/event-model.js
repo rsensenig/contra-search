@@ -33,17 +33,20 @@ const eventSchema = new Schema({
     },
     startDatetime: {
         type: Date,
-        required: [true, 'A start date and time is required.']
+        // required: [true, 'A start date and time is required.']
     },
     endDatetime: {
         type: Date,
-        required: [true, 'An end date and time is required.']
+        // required: [true, 'An end date and time is required.']
     },
     description: {
         type: String,
     },
     website: {
         type: String
+    },
+    needsReview: {
+        type: Boolean
     }
 });
 

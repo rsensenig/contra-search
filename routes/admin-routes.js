@@ -5,7 +5,6 @@ const adminCtrl = require('../controllers/admin-controller');
 // ROUTES
 router.route('/')
     .get(adminCtrl.admin_get)
-    .delete(adminCtrl.event_delete)
 
 router.route('/create')
     .get(adminCtrl.event_create_get)

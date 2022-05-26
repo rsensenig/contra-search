@@ -14,16 +14,6 @@ module.exports = {
             });
         }
     },
-    event_delete: (req, res) => {
-        const {_id} = req.params;
-        Event.deleteOne({_id: _id}, error => {
-            if(error) {
-                return error;
-            } else {
-                res.redirect('/admin');
-            }
-        })
-    },
     event_create_get: (req, res) => {
         if(req.isAuthenticated()) {
             res.render('pages/create');

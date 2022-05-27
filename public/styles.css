@@ -344,6 +344,11 @@ p {
 
 /* Admin Page Styling */
 
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 button,
 .delete-button {
     color: var(--white);

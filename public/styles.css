@@ -192,7 +192,7 @@ p {
     border-radius: 0 5px 5px 0;
   }
 
-.post-event {
+.submit-event {
     width: 300px;
     font-family: var(--sans-serif-font);
     font-size: 1rem;
@@ -460,7 +460,7 @@ th {
         height: 56px;
     }
 
-    .post-event {
+    .submit-event {
         width: 500px;
     }
 
@@ -550,7 +550,7 @@ th {
         height: 56px;
     }
 
-    .post-event {
+    .submit-event {
         width: 700px;
     }
 

@@ -7,13 +7,15 @@
                     <section>
                         <div class="small-card">
                             <div class="small-search">
-                                <input type="text" class="small-search-term" placeholder="Enter Zipcode">
-                                <button type="submit" class="small-search-button">
-                                    <i class="fas fa-search fa-lg"></i>
-                                </button>
+                                <form class="search-form" action="/events/results" method="GET">
+                                    <input type="text" class="small-search-term" placeholder="Enter Zip Code">
+                                    <button type="submit" class="small-search-button">
+                                        <i class="fas fa-search fa-lg"></i>
+                                    </button>
+                                </form>
                             </div>
-                            <div class="post-event">
-                                <a href="post-event.html">Post an event <i class="fas fa-arrow-right"></i></a>
+                            <div class="submit-event">
+                                <a href="/events/submit-event">Submit an event <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </section>

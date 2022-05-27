@@ -58,7 +58,12 @@ module.exports = {
         });
     },
     logout_get: (req, res) => {
-        req.logout();
-        res.redirect('/');
+        req.logout(function(error) {
+            if(error) {
+                return error
+            } else {
+                res.redirect('/');
+            }
+        });
     }
 }

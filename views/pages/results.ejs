@@ -1,0 +1,56 @@
+<%- include('../partials/head') -%>
+
+<%- include('../partials/nav') -%>
+
+           <main>
+                <div class="wrapper-inner">
+                    <section>
+                        <div class="small-card">
+                            <div class="small-search">
+                                <form class="search-form" action="/events/results" method="GET">
+                                    <input type="text" class="small-search-term" placeholder="Enter Zip Code">
+                                    <button type="submit" class="small-search-button">
+                                        <i class="fas fa-search fa-lg"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="submit-event">
+                                <a href="/events/submit-event">Submit an event <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="search-results-container">
+                            <% for (event of eventsArray) { %>
+                            <% if(event.needsReview==false) { %>
+                                <div class="event-item">
+
+                                    <div class="logo-container">
+                                        <!-- The heading will serve as a stand-in when a logo image doesn't exist or isn't provided -->
+                                        <h2>BOS</h2>
+                                        <!-- <img href="#" alt="logo"> -->
+                                    </div>
+                                    
+                                    <div class="event-listing">
+                                        <ul>
+                                            <li><h3><%= event.title %></h3></li>
+                                            <li><%= event.organization %></li>
+                                            <li><%= event.street %>, <%= event.city %>, <%= event.state %> <%= event.zipCode %></li>
+                                            <li><%= event.startDatetime %></li>
+                                            <li><%= event.endDatetime %></li>
+                                            <li><%= event.description %></li>
+                                            <li><a href="<%= event.website %>"><%= event.website %></a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            <% } %>
+                            <% } %>
+                        </div>
+                    </section>
+                </div>
+           </main>
+    
+<%- include('../partials/footer') -%>
+
+</html>

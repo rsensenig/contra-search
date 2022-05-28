@@ -1,0 +1,44 @@
+{
+  "name": "contra-search",
+  "version": "1.0.0",
+  "description": "This is a web app that shows event information for contra dances across New England. You can search for events based on zip code.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "16.14.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsensenig/personal-project.git"
+  },
+  "keywords": [
+    "CodeSquad",
+    "contra",
+    "dance"
+  ],
+  "author": "Rachel Sensenig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsensenig/personal-project/issues"
+  },
+  "homepage": "https://github.com/rsensenig/personal-project#readme",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.13",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.3.4",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16",
+    "uuid": "^8.3.2"
+  }
+}

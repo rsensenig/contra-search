@@ -1,0 +1,17 @@
+<% for (event of eventsArray) { %>
+    <tr>
+        <td>
+            <%= event.title %>
+        </td>
+        <td>
+            <a href="/admin/update/<%= event._id %>">
+                <button type="button" class="edit-button">Edit</button>
+            </a>
+        </td>
+        <td>
+            <form action="/events/<%= event._id %>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded"> 
+                <input type="submit" class="delete-button" value="Delete">
+            </form>
+        </td>
+    </tr>
+<% } %>

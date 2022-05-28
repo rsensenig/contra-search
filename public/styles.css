@@ -248,7 +248,8 @@ p {
     height: 150px;
 }
 
-.form-container input[type=submit] {
+.form-container input[type=submit],
+.orange-button {
     width: 100%;
     background-color: var(--orange);
     color: var(--white);

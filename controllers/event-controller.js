@@ -16,7 +16,9 @@ module.exports = {
         .then((response) => {
             const location = response.data.results[0].geometry.location;
             const METERS_PER_MILE = 1609.34;
-            Event.find({ location: { 
+            Event.find({ 
+                // needsReview: {$ne: true},
+                location: { 
                 $nearSphere: { 
                     $geometry: { 
                         type: "Point", 

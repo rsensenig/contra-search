@@ -1,0 +1,13 @@
+<% for (message of messagesArray) { %>
+    <tr>
+        <td>
+            <%= message.name %>
+        </td>
+        <td>
+            <%= message.message %>
+        </td>
+        <td>
+            <input type="submit" class="delete-button" value="Delete">
+        </td>
+    </tr>
+<% } %>

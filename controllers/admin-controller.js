@@ -1,4 +1,5 @@
 const Event = require('../models/event-model');
+const Message = require('../models/message-model');
 
 module.exports = {
     admin_get: (req, res) => {
@@ -22,7 +23,17 @@ module.exports = {
         }
     },
     inbox_get: (req, res) => {
-        res.render('pages/inbox');
+        if(req.isAuthenticated()) {
+            Message.find({}, (error, allMessages) => {
+                if(error) {
+                    return error;
+                } else {
+                    res.render('pages/inbox', {
+                        messagesArray: allMessages
+                    });
+                }
+            });
+        }
     },
     event_update_get: (req, res) => {
         if(req.isAuthenticated()) {

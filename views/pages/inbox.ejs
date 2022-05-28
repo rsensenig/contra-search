@@ -1,0 +1,29 @@
+<%- include('../partials/head') -%>
+
+<%- include('../partials/nav') -%>
+
+        <main>
+            <div class="wrapper-inner">
+                <div class="admin-header">
+                    <h1>Inbox</h1>
+                    <a href="/logout" role="button">
+                        <i class="fas fa-sign-out-alt fa-2x"></i>
+                    </a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- include('../partials/message-listing') -%>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    
+<%- include('../partials/footer') -%>
+
+</html>

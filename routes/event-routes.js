@@ -16,6 +16,5 @@ router.route('/submit-event')
 router.route('/:_id')
     .get(eventCtrl.event_detail_get)
     .put(eventCtrl.event_update_put)
-    .delete(eventCtrl.event_delete)
 
 module.exports = router;

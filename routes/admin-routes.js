@@ -15,4 +15,7 @@ router.route('/inbox')
 router.route('/update/:_id')
     .get(adminCtrl.event_update_get)
 
+router.route('/delete/:_id')
+    .delete(adminCtrl.event_delete)
+
 module.exports = router;

@@ -123,15 +123,5 @@ module.exports = {
                 res.redirect('/admin');
             }
         });
-    },
-    event_delete: (req, res) => {
-        const {_id} = req.params;
-        Event.deleteOne({_id: _id}, error => {
-            if(error) {
-                return error;
-            } else {
-                res.redirect('/admin');
-            }
-        })
     }
 }

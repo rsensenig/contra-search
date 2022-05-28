@@ -14,7 +14,9 @@
             </form>
         </td>
         <td>
+            <% if(event.needsReview===true) { %>
             <input type="button" class="approve-button" value="Approve">
+            <% } %>
         </td>
     </tr>
 <% } %>

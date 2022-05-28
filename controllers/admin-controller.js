@@ -47,5 +47,28 @@ module.exports = {
                 res.redirect('/admin');
             }
         })
+    },
+    event_approve_put: (req, res) => {
+        const {_id} = req.params;
+        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website} = req.body;
+        Event.findByIdAndUpdate(_id, {$set: {
+            title: title,
+            organization: organization,
+            street: street,
+            city: city,
+            state: state,
+            zipCode: zipCode,
+            startDatetime: startDatetime,
+            endDatetime: endDatetime,
+            description: description,
+            website: website,
+            needsReview: false
+        }}, {new: true}, error => {
+            if(error) {
+                return error;
+            } else {
+                res.redirect('/admin');
+            }
+        });
     }
 }

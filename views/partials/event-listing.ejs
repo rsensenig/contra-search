@@ -15,7 +15,7 @@
         </td>
         <td>
             <% if(event.needsReview===true) { %>
-            <input type="button" class="approve-button" value="Approve">
+            <form action="/admin/approve/<%= event._id %>?_method=PUT" method="POST"><input type="submit" class="approve-button" value="Approve"></form>
             <% } %>
         </td>
     </tr>

@@ -18,4 +18,7 @@ router.route('/update/:_id')
 router.route('/delete/:_id')
     .delete(adminCtrl.event_delete)
 
+router.route('/approve/:_id')
+    .put(adminCtrl.event_approve_put)
+
 module.exports = router;

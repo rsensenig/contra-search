@@ -351,7 +351,8 @@ p {
 }
 
 button,
-.delete-button {
+.delete-button,
+.approve-button {
     color: var(--white);
     font-size: 0.75em; /*mobile*/
     border: none;
@@ -369,7 +370,8 @@ button,
     background-color: var(--orange);
 }
 
-.edit-button {
+.edit-button,
+.approve-button {
     background-color: var(--purple);
 }
 
@@ -565,7 +567,8 @@ th {
     }
 
     button,
-    .delete-button {
+    .delete-button,
+    .approve-button {
         font-size: 1rem;
     }
 

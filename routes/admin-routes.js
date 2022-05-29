@@ -11,6 +11,7 @@ router.route('/create')
 
 router.route('/inbox')
     .get(adminCtrl.inbox_get)
+    .delete(adminCtrl.inbox_message_delete)
 
 router.route('/update/:_id')
     .get(adminCtrl.event_update_get)

@@ -7,7 +7,9 @@
             <%= message.message %>
         </td>
         <td>
-            <input type="submit" class="delete-button" value="Delete">
+            <form action="/admin/inbox?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded">
+                <input type="submit" class="delete-button" value="Delete">
+            </form>
         </td>
     </tr>
 <% } %>

@@ -35,6 +35,16 @@ module.exports = {
             });
         }
     },
+    inbox_message_delete: (req, res) => {
+        const {_id} = req.params;
+        Message.deleteOne({_id: _id}, error => {
+            if(error) {
+                return error;
+            } else {
+                res.redirect('/admin/inbox');
+            }
+        })
+    },
     event_update_get: (req, res) => {
         if(req.isAuthenticated()) {
             const {_id} = req.params;

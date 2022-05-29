@@ -103,7 +103,7 @@ module.exports = {
     },
     event_update_put: (req, res) => {
         const {_id} = req.params;
-        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website} = req.body;
+        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website, needsReview} = req.body;
         Event.findByIdAndUpdate(_id, {$set: {
             title: title,
             organization: organization,
@@ -115,7 +115,7 @@ module.exports = {
             endDatetime: endDatetime,
             description: description,
             website: website,
-            needsReview: false
+            needsReview: (needsReview=="on")
         }}, {new: true}, error => {
             if(error) {
                 return error;

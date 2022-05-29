@@ -302,6 +302,17 @@ p {
     border-radius: 0 5px 5px 0;
   }
 
+.small-submit-event {
+    width: 300px;
+    font-family: var(--sans-serif-font);
+    font-size: .75rem;
+    padding: 1px 16px;
+}
+
+.an {
+    display: none;
+}
+
 .event-item {
     background-color: var(--white);
     color: var(--gray);
@@ -316,14 +327,14 @@ p {
 }
 
 .logo-container {
-    width: 300px;
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .logo-container h2 {
-    border: solid 20px gray;
+    border: solid 10px gray;
     border-radius: 50%;
     color: var(--white);
     background-color: gray;
@@ -338,10 +349,15 @@ p {
 
 .event-listing ul {
     list-style-type: none;
+    padding-inline-start: 10px;
 }
 
 .event-listing li {
     padding: 3px;
+}
+
+.event-listing li h3 {
+    margin: 2px;
 }
 
 .more-link {
@@ -490,6 +506,15 @@ th {
         width: 500px;
     }
 
+    .small-submit-event {
+        font-size: 1rem;
+    }
+
+    .an {
+        display: inline-block;
+        text-decoration: underline;
+    }
+
     .about-me {
         display: flex;
         flex-flow: row;
@@ -516,6 +541,17 @@ th {
         font-size: 0.85rem;
     }
 
+    .logo-container {
+        width: 300px;
+    }
+    
+    .logo-container h2 {
+        border: solid 20px gray;
+        border-radius: 50%;
+        color: var(--white);
+        background-color: gray;
+    }
+
 }
 
 /* Large Desktop Size */
@@ -524,6 +560,7 @@ th {
     .wrapper {
         flex-direction: row;
     }
+
     nav {
         flex-direction: column;
         justify-content: start;
@@ -552,6 +589,10 @@ th {
 
     .menu-icon {
         display: none;
+    }
+
+    .wrapper-inner {
+        width: 75%;
     }
 
     p {

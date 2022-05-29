@@ -312,6 +312,7 @@ p {
     border-radius: 0 10px 10px 10px;
     margin: 10px 0;
     display: flex;
+    position: relative;
 }
 
 .logo-container {
@@ -330,6 +331,9 @@ p {
 
 .event-listing {
     width: 100%;
+    max-height: 200px;
+    overflow: hidden;
+    padding-right: 10px;
 }
 
 .event-listing ul {
@@ -338,6 +342,14 @@ p {
 
 .event-listing li {
     padding: 3px;
+}
+
+.more-link {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    background-color: white;
+    padding: 2px 15px;
 }
 
 /* Event Detail Page Styling */

@@ -36,12 +36,14 @@
                                             <li><h3><%= event.title %></h3></li>
                                             <li><%= event.organization %></li>
                                             <li><%= event.street %>, <%= event.city %>, <%= event.state %> <%= event.zipCode %></li>
-                                            <li><%= event.startDatetime %></li>
-                                            <li><%= event.endDatetime %></li>
+                                            <li><%= moment(event.startDatetime).format('MMMM Do YYYY, h:mm a') %></li>
+                                            <li><%= moment(event.endDatetime).format('MMMM Do YYYY, h:mm a') %></li>
                                             <li><%= event.description %></li>
                                             <li><a href="<%= event.website %>"><%= event.website %></a></li>
                                         </ul>
                                     </div>
+                                    
+                                    <span class="more-link"><a href="/events/<%= event._id %>">More...</a></span>
 
                                 </div>
                             <% } %>

@@ -7,8 +7,8 @@
             <h1><%= foundEvent.title %></h1>
             <h3><span class="category">Presented by:</span> <%= foundEvent.organization %></h3>
             <h5><span class="category">Location:</span> <%= foundEvent.street %>, <%= foundEvent.city %>, <%= foundEvent.state %> <%= foundEvent.zipCode %></h5>
-            <h5><span class="category">Starts:</span> <%= foundEvent.startDatetime %></h5>
-            <h5><span class="category">Ends:</span> <%= foundEvent.endDatetime %></h5>
+            <h5><span class="category">Starts:</span> <%= moment(foundEvent.startDatetime).format('MMMM Do YYYY, h:mm a') %></h5>
+            <h5><span class="category">Ends:</span> <%= moment(foundEvent.endDatetime).format('MMMM Do YYYY, h:mm a') %></h5>
             <p><%= foundEvent.description %></p>
             <p><a href="<%= foundEvent.website %>"><%= foundEvent.website %></a></p>
             <br>

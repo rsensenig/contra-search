@@ -1,5 +1,6 @@
 const Event = require('../models/event-model');
 const {Client} = require("@googlemaps/google-maps-services-js");
+const moment = require('moment');
 
 module.exports = {
     event_results_get: (req, res) => {
@@ -34,7 +35,8 @@ module.exports = {
                 } else {
                     res.render('pages/results', {
                         eventsArray: allEvents,
-                        location: location
+                        location: location,
+                        moment: moment
                     });
                 }
             });
@@ -52,7 +54,8 @@ module.exports = {
                 return error;
             } else {
                 res.render('pages/event-detail', {
-                    foundEvent: foundEvent
+                    foundEvent: foundEvent,
+                    moment: moment
                 });
             }
         });

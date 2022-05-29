@@ -11,6 +11,8 @@ router.route('/create')
 
 router.route('/inbox')
     .get(adminCtrl.inbox_get)
+
+router.route('/inbox/delete-message/:_id')
     .delete(adminCtrl.inbox_message_delete)
 
 router.route('/update/:_id')

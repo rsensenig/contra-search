@@ -36,7 +36,8 @@ module.exports = {
                     res.render('pages/results', {
                         eventsArray: allEvents,
                         location: location,
-                        moment: moment
+                        moment: moment,
+                        zipCode: req.query.zipCode
                     });
                 }
             });

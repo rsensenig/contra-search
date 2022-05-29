@@ -7,15 +7,24 @@
                 <h1>Update An Event</h1>
                 <div class="form-container">
                     <form action="/events/<%= foundEvent._id %>?_method=PUT" method="POST">
-                        <div><label for="title">Title of Event:</label>
-                            <input type="text" name="title" id="title" value="<%= foundEvent.title %>" minlength="1" required></div>
-                        <div><label for="organization">Organization Name:</label>
-                            <input type="text" name="organization" id="organization" value="<%= foundEvent.organization %>" minlength="1" required></div>
-                        <div><label for="street">Street Address:</label>
-                            <input type="text" name="street" id="street" value="<%= foundEvent.street %>" minlength="1" required></div>
-                        <div><label for="city">City:</label>
-                            <input type="text" name="city" id="city" value="<%= foundEvent.city %>" minlength="1" required></div>
-                        <div><label for="state">State:</label>
+                        <div>
+                            <label for="title">Title of Event:</label>
+                            <input type="text" name="title" id="title" value="<%= foundEvent.title %>" minlength="1" required>
+                        </div>
+                        <div>
+                            <label for="organization">Organization Name:</label>
+                            <input type="text" name="organization" id="organization" value="<%= foundEvent.organization %>" minlength="1" required>
+                        </div>
+                        <div>
+                            <label for="street">Street Address:</label>
+                            <input type="text" name="street" id="street" value="<%= foundEvent.street %>" minlength="1" required>
+                        </div>
+                        <div>
+                            <label for="city">City:</label>
+                            <input type="text" name="city" id="city" value="<%= foundEvent.city %>" minlength="1" required>
+                        </div>
+                        <div>
+                            <label for="state">State:</label>
                             <select name="state" id="state">
                                 <option value="" selected disabled>state value stored in database</option>
                                 <!-- <option value="AL">Alabama</option>
@@ -69,17 +78,32 @@
                                 <option value="WV">West Virginia</option>
                                 <option value="WI">Wisconsin</option>
                                 <option value="WY">Wyoming</option> -->
-                            </select></div>
-                        <div><label for="zipCode">Zip Code:</label>
-                            <input type="text" name="zipCode" id="zipCode" value="<%= foundEvent.zipCode %>" minlength="5" required></div>
-                        <div><label for="startDatetime">Select Start Date and Time:</label>
-                            <input type="datetime" name="startDatetime" id="startDatetime" value="<%= foundEvent.startDatetime %>" required></div>
-                        <div><label for="endDatetime">Select End Date and Time:</label>
-                            <input type="datetime" name="endDatetime" id="endDatetime" value="<%= foundEvent.endDatetime %>" required></div>
-                        <div><label for="description">Description:</label>
-                            <textarea name="description" id="description" rows="2" cols="20">description value stored in database</textarea></div>
-                        <div><label for="website">Website Link:</label>
-                            <input type="text" name="website" id="website" value="<%= foundEvent.website %>"></div>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="zipCode">Zip Code:</label>
+                            <input type="text" name="zipCode" id="zipCode" value="<%= foundEvent.zipCode %>" minlength="5" required>
+                        </div>
+                        <div>
+                            <label for="startDatetime">Select Start Date and Time:</label>
+                            <input type="datetime" name="startDatetime" id="startDatetime" value="<%= foundEvent.startDatetime %>" required>
+                        </div>
+                        <div>
+                            <label for="endDatetime">Select End Date and Time:</label>
+                            <input type="datetime" name="endDatetime" id="endDatetime" value="<%= foundEvent.endDatetime %>" required>
+                        </div>
+                        <div>
+                            <label for="description">Description:</label>
+                            <textarea name="description" id="description" rows="2" cols="20">description value stored in database</textarea>
+                        </div>
+                        <div>
+                            <label for="website">Website Link:</label>
+                            <input type="text" name="website" id="website" value="<%= foundEvent.website %>">
+                        </div>
+                        <div>
+                            <label for="needsReview">Needs Review:</label>
+                            <input type="checkbox" name="needsReview" id="needsReview" <%= foundEvent.needsReview ? "checked" : "" %>>
+                        </div>
                         <input type="submit" value="Submit">
                     </form>
                     <br>

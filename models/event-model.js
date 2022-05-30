@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const {Client} = require("@googlemaps/google-maps-services-js");
 
 const {Schema} = mongoose;
 
@@ -47,6 +48,15 @@ const eventSchema = new Schema({
     },
     needsReview: {
         type: Boolean
+    },
+    location: {
+        type: {
+            type: String,
+            default: 'Point'
+        },
+        coordinates: [{
+            type: Number
+        }]
     }
 });
 

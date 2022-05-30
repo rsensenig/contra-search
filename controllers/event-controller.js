@@ -66,6 +66,7 @@ module.exports = {
     },
     event_submit_post: (req, res) => {
         const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website} = req.body;
+        
         const newEvent = new Event ({
             title: title,
             organization: organization,
@@ -77,12 +78,45 @@ module.exports = {
             endDatetime: endDatetime,
             description: description,
             website: website,
-            needsReview: true
+            needsReview: true,
+            location: {
+                coordinates: [-70.34367376995942, 41.9366941692556] //Default pin location: in the middle of Cape Cod Bay
+            }
         });
 
         newEvent.save();
 
-        res.redirect('/thank-you');
+        // get lat and lng from google  and address
+        const client = new Client({});
+
+        client
+        .geocode({
+            params: {
+                address: newEvent.street.concat(" ",newEvent.city, " ",newEvent.state," ", newEvent.zipCode),
+                key: process.env.GOOGLE_API_KEY,
+                timeout: 1000, //milliseconds
+            }
+        })
+        .then((response) => {
+            const location = response.data.results[0].geometry.location;
+            console.log(location);
+            const {_id} = newEvent._id;
+            Event.findByIdAndUpdate(_id, {$set: {
+                location: {
+                    type: "Point", 
+                    coordinates: [ location.lng, location.lat ]
+                }
+            }}, {new: true}, error => {
+                if(error) {
+                    return error;
+                } else {
+                    res.redirect('/thank-you');
+                }
+            })
+        })
+        .catch((error) => {
+            console.log(`Google came back with this error: ${error}`);
+        });
     },
     event_create_post: (req, res) => {
         const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website} = req.body;

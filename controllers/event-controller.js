@@ -83,7 +83,6 @@ module.exports = {
         newEvent.save();
 
         res.redirect('/thank-you');
-        // alternatively do not redirect, and have if statement EJS template display thank you message
     },
     event_create_post: (req, res) => {
         const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website} = req.body;

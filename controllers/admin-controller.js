@@ -1,5 +1,6 @@
 const Event = require('../models/event-model');
 const Message = require('../models/message-model');
+const moment = require('moment');
 
 module.exports = {
     admin_get: (req, res) => {
@@ -53,7 +54,8 @@ module.exports = {
                     return error;
                 } else {
                     res.render('pages/update', {
-                        foundEvent: foundEvent
+                        foundEvent: foundEvent,
+                        moment: moment
                     });
                 }
             })

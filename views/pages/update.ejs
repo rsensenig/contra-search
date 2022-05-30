@@ -26,14 +26,14 @@
                         <div>
                             <label for="state">State:</label>
                             <select name="state" id="state">
-                                <option value="" selected disabled>state value stored in database</option>
+                                <option value="" selected disabled>Select a state</option>
                                 <!-- <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
                                 <option value="AZ">Arizona</option>
                                 <option value="AR">Arkansas</option>
                                 <option value="CA">California</option>
                                 <option value="CO">Colorado</option> -->
-                                <option value="CT">Connecticut</option>
+                                <option value="CT"  <%= foundEvent.state=="CT" ? "selected" : "" %>>Connecticut</option>
                                 <!-- <option value="DE">Delaware</option>
                                 <option value="DC">District Of Columbia</option>
                                 <option value="FL">Florida</option>
@@ -46,9 +46,9 @@
                                 <option value="KS">Kansas</option>
                                 <option value="KY">Kentucky</option>
                                 <option value="LA">Louisiana</option> -->
-                                <option value="ME">Maine</option>
+                                <option value="ME" <%= foundEvent.state=="ME" ? "selected" : "" %>>Maine</option>
                                 <!-- <option value="MD">Maryland</option> -->
-                                <option value="MA">Massachusetts</option>
+                                <option value="MA" <%= foundEvent.state=="MA" ? "selected" : "" %>>Massachusetts</option>
                                 <!-- <option value="MI">Michigan</option>
                                 <option value="MN">Minnesota</option>
                                 <option value="MS">Mississippi</option>
@@ -56,23 +56,23 @@
                                 <option value="MT">Montana</option>
                                 <option value="NE">Nebraska</option>
                                 <option value="NV">Nevada</option> -->
-                                <option value="NH">New Hampshire</option>
+                                <option value="NH" <%= foundEvent.state=="NH" ? "selected" : "" %>>New Hampshire</option>
                                 <!-- <option value="NJ">New Jersey</option>
                                 <option value="NM">New Mexico</option> -->
-                                <option value="NY">New York</option>
+                                <option value="NY" <%= foundEvent.state=="NY" ? "selected" : "" %>>New York</option>
                                 <!-- <option value="NC">North Carolina</option>
                                 <option value="ND">North Dakota</option>
                                 <option value="OH">Ohio</option>
                                 <option value="OK">Oklahoma</option>
                                 <option value="OR">Oregon</option>
                                 <option value="PA">Pennsylvania</option> -->
-                                <option value="RI">Rhode Island</option>
+                                <option value="RI" <%= foundEvent.state=="RI" ? "selected" : "" %>>Rhode Island</option>
                                 <!-- <option value="SC">South Carolina</option>
                                 <option value="SD">South Dakota</option>
                                 <option value="TN">Tennessee</option>
                                 <option value="TX">Texas</option>
                                 <option value="UT">Utah</option> -->
-                                <option value="VT">Vermont</option>
+                                <option value="VT" <%= foundEvent.state=="VT" ? "selected" : "" %>>Vermont</option>
                                 <!-- <option value="VA">Virginia</option>
                                 <option value="WA">Washington</option>
                                 <option value="WV">West Virginia</option>
@@ -86,15 +86,15 @@
                         </div>
                         <div>
                             <label for="startDatetime">Select Start Date and Time:</label>
-                            <input type="datetime" name="startDatetime" id="startDatetime" value="<%= foundEvent.startDatetime %>" required>
+                            <input type="datetime-local" name="startDatetime" id="startDatetime" value="<%= moment(foundEvent.startDatetime).format("YYYY-MM-DDThh:mm") %>" required>
                         </div>
                         <div>
                             <label for="endDatetime">Select End Date and Time:</label>
-                            <input type="datetime" name="endDatetime" id="endDatetime" value="<%= foundEvent.endDatetime %>" required>
+                            <input type="datetime-local" name="endDatetime" id="endDatetime" value="<%= moment(foundEvent.endDatetime).format("YYYY-MM-DDThh:mm") %>" required>
                         </div>
                         <div>
                             <label for="description">Description:</label>
-                            <textarea name="description" id="description" rows="2" cols="20">description value stored in database</textarea>
+                            <textarea name="description" id="description"><%= foundEvent.description %></textarea>
                         </div>
                         <div>
                             <label for="website">Website Link:</label>

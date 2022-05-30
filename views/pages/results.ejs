@@ -22,7 +22,6 @@
                     <section>
                         <div class="search-results-container">
                             <% for (event of eventsArray) { %>
-                            <% if(event.needsReview===false) { %>
                                 <div class="event-item">
 
                                     <div class="logo-container">
@@ -46,7 +45,6 @@
                                     <span class="more-link"><a href="/events/<%= event._id %>">More...</a></span>
 
                                 </div>
-                            <% } %>
                             <% } %>
                         </div>
                     </section>

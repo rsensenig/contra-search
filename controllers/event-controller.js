@@ -18,7 +18,7 @@ module.exports = {
             const location = response.data.results[0].geometry.location;
             const METERS_PER_MILE = 1609.34;
             Event.find({ 
-                // needsReview: {$ne: true},
+                needsReview: {$ne: true},
                 location: { 
                 $nearSphere: { 
                     $geometry: { 
@@ -99,7 +99,6 @@ module.exports = {
         })
         .then((response) => {
             const location = response.data.results[0].geometry.location;
-            console.log(location);
             const {_id} = newEvent._id;
             Event.findByIdAndUpdate(_id, {$set: {
                 location: {
@@ -131,12 +130,44 @@ module.exports = {
             endDatetime: endDatetime,
             description: description,
             website: website,
-            needsReview: false
+            needsReview: false,
+            location: {
+                coordinates: [-70.34367376995942, 41.9366941692556] //Default pin location: in the middle of Cape Cod Bay
+            }
         });
 
         newEvent.save();
 
-        res.redirect('/admin');
+        // get lat and lng from google and address
+        const client = new Client({});
+
+        client
+        .geocode({
+            params: {
+                address: newEvent.street.concat(" ",newEvent.city, " ",newEvent.state," ", newEvent.zipCode),
+                key: process.env.GOOGLE_API_KEY,
+                timeout: 1000, //milliseconds
+            }
+        })
+        .then((response) => {
+            const location = response.data.results[0].geometry.location;
+            const {_id} = newEvent._id;
+            Event.findByIdAndUpdate(_id, {$set: {
+                location: {
+                    type: "Point", 
+                    coordinates: [ location.lng, location.lat ]
+                }
+            }}, {new: true}, error => {
+                if(error) {
+                    return error;
+                } else {
+                    res.redirect('/admin');
+                }
+            })
+        })
+        .catch((error) => {
+            console.log(`Google came back with this error: ${error}`);
+        });
     },
     event_update_put: (req, res) => {
         const {_id} = req.params;

@@ -1,5 +1,3 @@
-const Event = require('../models/event-model');
-
 // Interactivity for hamburger icon:
 const hamburgerIcon = document.querySelector(".menu-icon");
 

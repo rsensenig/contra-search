@@ -51,10 +51,12 @@ nav {
 
 nav h1 {
     color: var(--heading);
-    font-size: 1rem;
+    /* font-size: 1rem; */
     margin: 0 5px;
     text-decoration: none;
 }
+
+
 
 nav a {
     text-decoration: none;

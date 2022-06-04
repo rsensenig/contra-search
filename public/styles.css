@@ -458,7 +458,7 @@ th {
     }
 
     nav h1 {
-        font-size: 1.6rem;
+        font-size: 1.6rem !important;
         margin-top: 1em;
     }
 
@@ -569,7 +569,7 @@ th {
     }
 
     nav h1 {
-        font-size: 1.8rem;
+        font-size: 1.8rem !important;
         margin-top: 1em;
     }
 

@@ -235,7 +235,8 @@ p {
 }
 
 .form-container input[type=text],
-.form-container input[type=number], 
+.form-container input[type=number],
+.form-container input[type=email], 
 .form-container select,
 .form-container textarea,
 .form-container input[type=datetime-local],

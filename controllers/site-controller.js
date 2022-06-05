@@ -13,9 +13,10 @@ module.exports = {
         res.render('pages/contact');
     },
     contact_me_message_post: (req, res) => {
-        const {name, message} = req.body;
+        const {name, email, message} = req.body;
         const newMessage = new Message ({
             name: name,
+            email: email,
             message: message
         });
 

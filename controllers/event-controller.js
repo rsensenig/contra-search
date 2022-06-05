@@ -30,14 +30,21 @@ module.exports = {
             } },
             (error, allEvents) => {
                 if(error) {
-                    console.log(error);
-                    return error;
+                    console.log(`Database came back with an error: ${error}.`);
+                    res.render('pages/results', {
+                        eventsArray: [],
+                        location: location,
+                        moment: moment,
+                        zipCode: req.query.zipCode,
+                        error: error,
+                    });
                 } else {
                     res.render('pages/results', {
                         eventsArray: allEvents,
                         location: location,
                         moment: moment,
-                        zipCode: req.query.zipCode
+                        zipCode: req.query.zipCode,
+                        error: undefined,
                     });
                 }
             });
@@ -45,7 +52,13 @@ module.exports = {
         })
         .catch((error) => {
             console.log(`Google came back with this error: ${error}`);
-            // TO DO: render results page with error message
+            res.render('pages/results', {
+                eventsArray: [],
+                location: {lat:0, lng:0},
+                moment: moment,
+                zipCode: req.query.zipCode,
+                error: "I didn't understand that zip code. Please enter a different one.",
+            });
         });
     },
     event_detail_get: (req, res) => {

@@ -20,6 +20,13 @@
                         </div>
                     </section>
                     <section>
+                        <div class="error">
+                        <% if (error) { %>
+                            <%= error %>
+                        <% } else if (eventsArray.length < 1 ) { %>
+                            There are no results in your area. Contra Search currently only includes events in New England and New York.
+                        <% } %>
+                        </div>
                         <div class="search-results-container">
                             <% for (event of eventsArray) { %>
                                 <div class="event-item">

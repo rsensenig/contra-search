@@ -126,6 +126,10 @@ main {
     height: 100%;
 }
 
+section:last-of-type {
+    padding-bottom: 10px;
+}
+
 .wrapper-inner {
     width: 85%;
     margin: 0px auto;

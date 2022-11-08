@@ -9,7 +9,7 @@ const rule = new RRule({
     count: 30,
     interval: 1,
     wkst: RRule.SU,
-    byweekday: RRule.SU.nth(+1),
+    byweekday: [RRule.SU.nth(+1), RRule.SU.nth(+3)],
     bymonth: [1, 2, 3, 4, 5, 9, 10, 11, 12]
   })
 
@@ -26,10 +26,6 @@ const rule = new RRule({
   
   // Get a slice:
   console.log('rule.between(new Date(Date.UTC(2012, 7, 1)), new Date(Date.UTC(2012, 8, 1))): ', rule.between(new Date(Date.UTC(2012, 7, 1)), new Date(Date.UTC(2012, 8, 1))));
-  
-  // Get an iCalendar RRULE string representation:
-  // The output can be used with RRule.fromString().
-  console.log('rule.toString(): ', rule.toString());
   
   // Get a human-friendly text representation:
   // The output can be used with RRule.fromText().

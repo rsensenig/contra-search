@@ -104,8 +104,7 @@ To Do:
 ## Project Status
 This project is still under development. Here is a log of current bugs that I'm working on:
 
-10/23/2022 - I noticed that regardless of what zip code I enter, the error message "I didn't understand that zip code. Please enter a different one." appears.
-
+10/23/2022 - I noticed that regardless of what zip code I enter, the error message "I didn't understand that zip code. Please enter a different one." appears. - RESOLVED
 
 
 <!-- License -->

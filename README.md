@@ -106,6 +106,7 @@ This project is still under development. Here is a log of current bugs that I'm 
 
 10/23/2022 - I noticed that regardless of what zip code I enter, the error message "I didn't understand that zip code. Please enter a different one." appears. - RESOLVED
 
+11/7/2022 - currently working on implementing rrule for adding events based on a recurring event series
 
 <!-- License -->
 ## License

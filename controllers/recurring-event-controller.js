@@ -12,20 +12,12 @@ const rule = new RRule({
     byweekday: [RRule.SU.nth(+1), RRule.SU.nth(+3)],
     bymonth: [1, 2, 3, 4, 5, 9, 10, 11, 12]
   })
-
-// const rule = new RRule({
-//     freq: RRule.WEEKLY,
-//     interval: 5,
-//     byweekday: [RRule.MO, RRule.FR],
-//     dtstart: new Date(Date.UTC(2012, 1, 1, 10, 30)),
-//     until: new Date(Date.UTC(2012, 12, 31))
-//   })
   
   // Get all occurrence dates (Date instances):
   console.log('rule.all(): ', rule.all());
   
   // Get a slice:
-  console.log('rule.between(new Date(Date.UTC(2012, 7, 1)), new Date(Date.UTC(2012, 8, 1))): ', rule.between(new Date(Date.UTC(2012, 7, 1)), new Date(Date.UTC(2012, 8, 1))));
+  console.log('rule.between(new Date(Date.UTC(2022, 11, 1)), new Date(Date.UTC(2023, 12, 31))): ', rule.between(new Date(Date.UTC(2022, 11, 1)), new Date(Date.UTC(2023, 12, 31))));
   
   // Get a human-friendly text representation:
   // The output can be used with RRule.fromText().

@@ -22,7 +22,7 @@ const rule = new RRule({
   
   // Get a human-friendly text representation:
   // The output can be used with RRule.fromText().
-  // console.log('rule.toText(): ', rule.toText());
+  console.log('rule.toText(): ', rule.toText());
 
   // create an object that contains the recurring data that stays constant
   const recurringData = {

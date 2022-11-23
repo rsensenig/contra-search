@@ -71,6 +71,14 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
+3. Run mongodb using docker (assumes you have docker installed already)
+    - docker pull mongo
+    - docker run --name mongodb -d -p 27017:27017 mongo
+3. Create a `.env` file in the root of this project with these values
+    ```sh
+    SECRET_KEY="a very secret key" # This is fine for testing
+    DB_URL="mongodb://localhost:27017" # This matches the docker port above
+    ```
 3. Run the server
     ```sh
     node app.js

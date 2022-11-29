@@ -17,4 +17,7 @@ router.route('/:_id')
     .get(eventCtrl.event_detail_get)
     .put(eventCtrl.event_update_put)
 
+router.route('/create-recurring-event')
+    .post(eventCtrl.recurring_event_create_post)
+
 module.exports = router;

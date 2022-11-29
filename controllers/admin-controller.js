@@ -93,5 +93,12 @@ module.exports = {
                 res.redirect('/admin');
             }
         });
-    }
+    },
+    recurring_event_create_get: (req, res) => {
+        if(req.isAuthenticated()) {
+            res.render('pages/create-recurring');
+        } else {
+            res.redirect('/login');
+        }
+    },
 }

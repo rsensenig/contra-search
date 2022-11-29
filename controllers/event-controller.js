@@ -204,5 +204,78 @@ module.exports = {
                 res.redirect('/admin');
             }
         });
-    }
+    },
+    recurring_event_create_post: (req, res) => {
+        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website} = req.body;
+        
+        // create an object that contains the recurring data that stays constant
+        const recurringData = {
+            title: 'title',
+            organization: 'organization',
+            street: 'street',
+            city: 'city',
+            state: 'state',
+            zipCode: 'zipCode',
+            description: 'description',
+            website: 'website',
+            needsReview: false,
+            location: {
+                coordinates: [-70.34367376995942, 41.9366941692556] //Default pin location: in the middle of Cape Cod Bay
+            }
+        };
+
+        // Create a rule:
+        const rule = new RRule({
+            freq: 'frequency',
+            dtstart: new Date(Date.UTC(2022, 10, 6, 23, 30, 0)),
+            // tzid: America/New_York,
+            until: new Date(Date.UTC(2023, 11, 31, 23, 30, 0)),
+            interval: 'interval',
+            wkst: 'weekStart',
+            byweekday: 'byWeekday',
+            bymonth: 'byMonth'
+        });
+
+        // Looping through all the dates in the recurring event series rule
+        for (const date of rule.all()) {
+            //create new event and pass in recurring data that stays constant
+            const newEvent = new Event(recurringData);
+            newEvent.startDatetime = date;
+            newEvent.endDatetime = date.setHours(date.getHours() + 3);
+            console.log('newEvent: ', newEvent);
+
+            newEvent.save();
+        }
+
+        // get lat and lng from google and address
+        const client = new Client({});
+
+        client
+        .geocode({
+            params: {
+                address: newEvent.street.concat(" ",newEvent.city, " ",newEvent.state," ", newEvent.zipCode),
+                key: process.env.GOOGLE_API_KEY,
+                timeout: 1000, //milliseconds
+            }
+        })
+        .then((response) => {
+            const location = response.data.results[0].geometry.location;
+            const {_id} = newEvent._id;
+            Event.findByIdAndUpdate(_id, {$set: {
+                location: {
+                    type: "Point", 
+                    coordinates: [ location.lng, location.lat ]
+                }
+            }}, {new: true}, error => {
+                if(error) {
+                    return error;
+                } else {
+                    res.redirect('/admin');
+                }
+            })
+        })
+        .catch((error) => {
+            console.log(`Google came back with this error: ${error}`);
+        });
+    },
 }

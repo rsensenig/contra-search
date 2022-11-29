@@ -24,4 +24,7 @@ router.route('/delete/:_id')
 router.route('/approve/:_id')
     .put(adminCtrl.event_approve_put)
 
+router.route('/create-recurring')
+    .get(adminCtrl.recurring_event_create_get)
+
 module.exports = router;

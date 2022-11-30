@@ -1,6 +1,7 @@
 const Event = require('../models/event-model');
 const {Client} = require("@googlemaps/google-maps-services-js");
 const moment = require('moment');
+const { RRule } = require('rrule');
 
 module.exports = {
     event_results_get: (req, res) => {

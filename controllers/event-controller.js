@@ -207,35 +207,66 @@ module.exports = {
         });
     },
     recurring_event_create_post: (req, res) => {
-        const {title, organization, street, city, state, zipCode, startDatetime, endDatetime, description, website} = req.body;
-        
+        const {title, organization, street, city, state, zipCode, frequency, startDatetime, endDatetime, interval, weekStart, byWeekday, byMonth, description, website} = req.body;
+        console.log('information from form:', req.body);
+        const form = {
+            title: 'TestEvent123',
+            organization: 'TestOrg123',
+            street: '255 Highland Ave',
+            city: 'Somerville',
+            zipCode: '02143',
+            frequency: 'RRule.YEARLY',
+            startDatetime: '2023-01-01T19:00',
+            endDatetime: '2023-12-31T22:30',
+            interval: '',
+            sunday: [ 'RRule.SU', 'RRule.SU' ],
+            february: '2',
+            march: '3',
+            april: '4',
+            may: '5',
+            june: '6',
+            september: '9',
+            october: '10',
+            november: '11',
+            december: '12',
+            description: '',
+            website: 'https://'
+          }
+
+        // store all the months of the year in a variable
+        const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+
+        // have the checked months start out as an empty array
+        let checkedMonths = [];
+
+        console.log(req.body.hasOwnProperty('january'));
+
+        // Create a rule:
+        const rule = new RRule({
+            freq: frequency,
+            dtstart: new Date(startDatetime),
+            until: new Date(endDatetime),
+            interval: interval,
+            wkst: weekStart,
+            byweekday: byWeekday,
+            bymonth: byMonth //findMonths(body)
+        });
+
         // create an object that contains the recurring data that stays constant
         const recurringData = {
-            title: 'title',
-            organization: 'organization',
-            street: 'street',
-            city: 'city',
-            state: 'state',
-            zipCode: 'zipCode',
-            description: 'description',
-            website: 'website',
+            title: title,
+            organization: organization,
+            street: street,
+            city: city,
+            state: state,
+            zipCode: zipCode,
+            description: description,
+            website: website,
             needsReview: false,
             location: {
                 coordinates: [-70.34367376995942, 41.9366941692556] //Default pin location: in the middle of Cape Cod Bay
             }
         };
-
-        // Create a rule:
-        const rule = new RRule({
-            freq: 'frequency',
-            dtstart: new Date(Date.UTC(2022, 10, 6, 23, 30, 0)),
-            // tzid: America/New_York,
-            until: new Date(Date.UTC(2023, 11, 31, 23, 30, 0)),
-            interval: 'interval',
-            wkst: 'weekStart',
-            byweekday: 'byWeekday',
-            bymonth: 'byMonth'
-        });
 
         // Looping through all the dates in the recurring event series rule
         for (const date of rule.all()) {

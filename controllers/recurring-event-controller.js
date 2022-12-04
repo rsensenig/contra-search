@@ -1,12 +1,13 @@
 const Event = require('../models/event-model');
-const { RRule, RRuleSet, rrulestr } = require('rrule');
+const { RRule } = require('rrule');
 
+// const freq = RRule[form['frequency']] //RRule['YEARLY']
 // Create a rule:
 const rule = new RRule({
     freq: RRule.YEARLY,
-    dtstart: new Date(Date.UTC(2022, 10, 6, 23, 30, 0)),
+    dtstart: new Date(Date.UTC(2023, 0, 1, 19, 0, 0)),
     // tzid: America/New_York,
-    until: new Date(Date.UTC(2023, 11, 31, 23, 30, 0)),
+    until: new Date(Date.UTC(2023, 11, 31, 22, 30, 0)),
     count: 30,
     interval: 1,
     wkst: RRule.SU,

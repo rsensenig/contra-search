@@ -25,25 +25,44 @@ const body = {
 // store all the months of the year in a variable
 const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 
-console.log(body.hasOwnProperty('february'));
+// console.log(body.hasOwnProperty('february'));
 
 // write a function that takes a form and returns a list of months selected [2,3,4,5,7,8,9,11]
-function findMonths(form){
-    // have the checked months start out as an empty array
-    let checkedMonths = [];
+// function findMonths(form){
+//     // have the checked months start out as an empty array
+//     let checkedMonths = [];
     
-    // if the form has a month
-    if(form.hasOwnProperty('february')) {
-        // add it to the array checkedMonths
-        checkedMonths.push(parseInt(form['february']));
-    }
+//     // if the form has a month
+//     if(form.hasOwnProperty('february')) {
+//         // add the value of the month to the array checkedMonths
+//         checkedMonths.push(parseInt(form['february']));
+//     }
 
-    // if the form has a month
-    if(form.hasOwnProperty('march')) {
-        // add it to the array checkedMonths
-        checkedMonths.push(parseInt(form['march']));
-    }
+//     // if the form has a month
+//     if(form.hasOwnProperty('march')) {
+//         // add the value of the month to the array checkedMonths
+//         checkedMonths.push(parseInt(form['march']));
+//     }
 
-    return checkedMonths;
-}
-console.log(findMonths(body));
+//     return checkedMonths;
+// }
+
+// console.log(findMonths(body));
+
+// make an array of the number of characters in each month
+
+months.map(month => month.length);
+console.log('months.map(month => month.length): ', months.map(month => month.length));
+
+months.map(month => body.hasOwnProperty(month));
+console.log('months.map(month => body.hasOwnProperty(month)): ', months.map(month => body.hasOwnProperty(month)));
+
+const checkedMonths = months.map(month => {
+    // if the form has a month
+    if(body.hasOwnProperty(month))  {
+    // add the value of the month to checkedMonths
+    return parseInt(body[month]);
+    }
+}).filter(Number);
+
+console.log(checkedMonths);

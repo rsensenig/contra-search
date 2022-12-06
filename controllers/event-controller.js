@@ -213,15 +213,6 @@ module.exports = {
         // store all the months of the year in a variable
         const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 
-        const checkedMonths = months.map(month => {
-            // if the form has a month
-            if(req.body.hasOwnProperty(month))  {
-                // add the value of the month to checkedMonths
-                return parseInt(req.body[month]);
-            }
-            // remove undefined values from the array
-        }).filter(Number);
-
         // Create a rule:
         const rule = new RRule({
             freq: frequency,
@@ -230,7 +221,7 @@ module.exports = {
             interval: interval,
             wkst: weekStart,
             byweekday: byWeekday,
-            bymonth: checkedMonths
+            bymonth: months.map(month => parseInt(body[month])).filter(Number)
         });
 
         // create an object that contains the recurring data that stays constant

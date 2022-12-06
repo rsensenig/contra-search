@@ -57,12 +57,6 @@ console.log('months.map(month => month.length): ', months.map(month => month.len
 months.map(month => body.hasOwnProperty(month));
 console.log('months.map(month => body.hasOwnProperty(month)): ', months.map(month => body.hasOwnProperty(month)));
 
-const checkedMonths = months.map(month => {
-    // if the form has a month
-    if(body.hasOwnProperty(month))  {
-    // add the value of the month to checkedMonths
-    return parseInt(body[month]);
-    }
-}).filter(Number);
+const checkedMonths = months.map(month => parseInt(body[month])).filter(Number);
 
 console.log(checkedMonths);

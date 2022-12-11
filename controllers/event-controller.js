@@ -218,7 +218,7 @@ module.exports = {
             freq: frequency,
             dtstart: new Date(startDatetime),
             until: new Date(endDatetime),
-            interval: interval,
+            interval: parseInt(body.interval),
             wkst: weekStart,
             byweekday: byWeekday,
             bymonth: months.map(month => parseInt(body[month])).filter(Number)

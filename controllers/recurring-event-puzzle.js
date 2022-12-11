@@ -7,7 +7,7 @@ const body = {
     frequency: 'RRule.YEARLY',
     startDatetime: '2023-01-01T19:00',
     endDatetime: '2023-12-31T22:30',
-    interval: '',
+    interval: '1',
     sunday: [ 'RRule.SU', 'RRule.SU' ],
     february: '2',
     march: '3',
@@ -60,3 +60,6 @@ console.log('months.map(month => body.hasOwnProperty(month)): ', months.map(mont
 const checkedMonths = months.map(month => parseInt(body[month])).filter(Number);
 
 console.log(checkedMonths);
+
+// convert the string of interval into an integer
+console.log(parseInt(body.interval));

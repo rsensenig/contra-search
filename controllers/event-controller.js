@@ -218,10 +218,10 @@ module.exports = {
             freq: frequency,
             dtstart: new Date(startDatetime),
             until: new Date(endDatetime),
-            interval: parseInt(body.interval),
+            interval: parseInt(req.body.interval),
             wkst: weekStart,
             byweekday: byWeekday,
-            bymonth: months.map(month => parseInt(body[month])).filter(Number)
+            bymonth: months.map(month => parseInt(req.body[month])).filter(Number)
         });
 
         // create an object that contains the recurring data that stays constant

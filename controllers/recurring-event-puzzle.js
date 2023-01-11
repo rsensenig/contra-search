@@ -28,6 +28,7 @@ const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 
 // console.log(body.hasOwnProperty('february'));
 
 // write a function that takes a form and returns a list of months selected [2,3,4,5,7,8,9,11]
+
 // function findMonths(form){
 //     // have the checked months start out as an empty array
 //     let checkedMonths = [];
@@ -50,13 +51,14 @@ const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 
 // console.log(findMonths(body));
 
 // make an array of the number of characters in each month
-
 months.map(month => month.length);
 console.log('months.map(month => month.length): ', months.map(month => month.length));
 
+// make an array of Boolean of values of whether a month was selected in the form
 months.map(month => body.hasOwnProperty(month));
 console.log('months.map(month => body.hasOwnProperty(month)): ', months.map(month => body.hasOwnProperty(month)));
 
+// map over the months, and for each month that was selected in the form, return the integer for that month
 const checkedMonths = months.map(month => parseInt(body[month])).filter(Number);
 
 console.log(checkedMonths);

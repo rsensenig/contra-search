@@ -65,3 +65,25 @@ console.log(checkedMonths);
 
 // convert the string of interval into an integer
 console.log(parseInt(body.interval));
+
+// set a conditional statement for the frequency of the recurring event
+// place conditional statement within a function
+function defineFreq() {
+  // if the frequency is yearly
+  if(body.frequency === 'yearly') {
+    // then set the variable to RRule.YEARLY
+    body.frequency = RRule.YEARLY;
+  // else if the frequency is monthly
+  } else if(body.frequency === 'monthly') {
+    // then set the variable to RRule.MONTHLY
+    body.frequency = RRule.MONTHLY;
+  // else if the frequency is weekly
+  } else if(body.frequency === 'weekly') {
+    // then set the variable to RRule.WEEKLY
+    body.frequency = RRule.WEEKLY;
+  }
+
+  return body.frequency;
+}
+
+console.log(defineFreq());

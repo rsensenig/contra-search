@@ -210,12 +210,25 @@ module.exports = {
         const {title, organization, street, city, state, zipCode, frequency, startDatetime, endDatetime, interval, weekStart, byWeekday, description, website} = req.body;
         console.log('information from form:', req.body);
 
+        // function for defining the frequency of the recurring event for RRule
+        function defineFreq() {
+            if(req.body.frequency === 'yearly') {
+              req.body.frequency = RRule.YEARLY;
+            } else if(req.body.frequency === 'monthly') {
+              req.body.frequency = RRule.MONTHLY;
+            } else if(req.body.frequency === 'weekly') {
+              req.body.frequency = RRule.WEEKLY;
+            }
+          
+            return req.body.frequency;
+          }
+        
         // store all the months of the year in a variable
         const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 
         // Create a rule:
         const rule = new RRule({
-            freq: frequency,
+            freq: defineFreq(),
             dtstart: new Date(startDatetime),
             until: new Date(endDatetime),
             interval: parseInt(req.body.interval),
